@@ -21,3 +21,16 @@ return Application::configure(basePath: dirname(__DIR__))
             fn (Request $request) => $request->is('api/*'),
         );
     })->create();
+
+if (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL'])) {
+    $storagePath = '/tmp/storage';
+    if (!is_dir($storagePath)) {
+        mkdir($storagePath . '/framework/views', 0755, true);
+        mkdir($storagePath . '/framework/cache/data', 0755, true);
+        mkdir($storagePath . '/framework/sessions', 0755, true);
+        mkdir($storagePath . '/logs', 0755, true);
+    }
+    $app->useStoragePath($storagePath);
+}
+
+return $app;
