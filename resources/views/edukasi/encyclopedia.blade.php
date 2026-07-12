@@ -164,64 +164,73 @@
                 <!-- Chat Area -->
                 <div class="flex-1 overflow-y-auto p-6 bg-slate-50 space-y-6 hide-scrollbar scroll-smooth" style="background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23cbd5e1\' fill-opacity=\'0.2\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E');">
                     
-                    <!-- Chat 1 (Kiri - Siswa) -->
-                    <div class="flex items-start gap-3 group">
-                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-blue-200">👦</div>
-                        <div class="max-w-[80%]">
-                            <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Raka, 9 Tahun (Surabaya) • 10:15</span>
-                            <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
-                                Yeay! Bibit bayamku sudah tumbuh daunnya hari ini. Seru banget tiap pagi bangun tidur langsung ngecek pot. Terus pas di scan pakai HP, kelihatan akar virtualnya! 🥬✨
+                    @if(isset($chats) && $chats->count() > 0)
+                        @foreach($chats->reverse() as $chat)
+                            <div class="flex items-start gap-3 group mt-4 {{ $chat->is_admin ? 'flex-row-reverse' : '' }}">
+                                <div class="w-10 h-10 rounded-full {{ $chat->is_admin ? 'bg-emerald-100 border-emerald-200' : 'bg-blue-100 border-blue-200' }} flex items-center justify-center text-lg shrink-0 shadow-sm border">{{ $chat->is_admin ? '🤖' : '👦' }}</div>
+                                <div class="max-w-[80%]">
+                                    <span class="text-[11px] text-slate-400 font-bold {{ $chat->is_admin ? 'mr-1 text-right' : 'ml-1' }} mb-1 block tracking-wide">{{ $chat->name }} ({{ $chat->role }}) • {{ $chat->created_at->diffForHumans() }}</span>
+                                    <div class="{{ $chat->is_admin ? 'bg-emerald-100 border-emerald-200 text-emerald-900 text-right rounded-tr-sm' : 'bg-white border-slate-200 text-slate-700 rounded-tl-sm' }} p-4 rounded-2xl shadow-sm border text-sm leading-relaxed group-hover:shadow-md transition-shadow">
+                                        {{ $chat->message }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <!-- Chat 1 (Kiri - Siswa) -->
+                        <div class="flex items-start gap-3 group">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-blue-200">👦</div>
+                            <div class="max-w-[80%]">
+                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Raka, 9 Tahun (Surabaya) • 10:15</span>
+                                <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
+                                    Yeay! Bibit bayamku sudah tumbuh daunnya hari ini. Seru banget tiap pagi bangun tidur langsung ngecek pot. Terus pas di scan pakai HP, kelihatan akar virtualnya! 🥬✨
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Chat 2 (Kanan - Admin/Sistem) -->
-                    <div class="flex items-start gap-3 flex-row-reverse group mt-2">
-                        <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-emerald-200">🤖</div>
-                        <div class="max-w-[80%]">
-                            <span class="text-[11px] text-slate-400 font-bold mr-1 mb-1 block text-right tracking-wide">Paper Grow Bot • 10:16</span>
-                            <div class="bg-emerald-100 p-4 rounded-2xl rounded-tr-sm shadow-sm border border-emerald-200 text-emerald-900 text-sm leading-relaxed text-right group-hover:shadow-md transition-shadow">
-                                Wah, hebat sekali Kak Raka! Jangan lupa disiram air secukupnya dan dijemur matahari pagi ya biar bayamnya makin subur. ☀️💦
+                        <!-- Chat 2 (Kanan - Admin/Sistem) -->
+                        <div class="flex items-start gap-3 flex-row-reverse group mt-2">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-emerald-200">🤖</div>
+                            <div class="max-w-[80%]">
+                                <span class="text-[11px] text-slate-400 font-bold mr-1 mb-1 block text-right tracking-wide">Paper Grow Bot • 10:16</span>
+                                <div class="bg-emerald-100 p-4 rounded-2xl rounded-tr-sm shadow-sm border border-emerald-200 text-emerald-900 text-sm leading-relaxed text-right group-hover:shadow-md transition-shadow">
+                                    Wah, hebat sekali Kak Raka! Jangan lupa disiram air secukupnya dan dijemur matahari pagi ya biar bayamnya makin subur. ☀️💦
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Chat 3 (Kiri - Guru/Sekolah) -->
-                    <div class="flex items-start gap-3 group mt-6">
-                        <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-pink-200">👩‍🏫</div>
-                        <div class="max-w-[80%]">
-                            <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Ibu Ratna (Guru IPA - Bandung) • 14:30</span>
-                            <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
-                                Paper Grow ini sangat membantu untuk praktek IPAS Kurikulum Merdeka. Anak-anak di kelas sangat antusias waktu presentasi menggunakan model 3D (AR). Kertas daur ulangnya juga mengajarkan mereka soal lingkungan. Sangat direkomendasikan! 📚👍
+                        <!-- Chat 3 (Kiri - Guru/Sekolah) -->
+                        <div class="flex items-start gap-3 group mt-6">
+                            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-pink-200">👩‍🏫</div>
+                            <div class="max-w-[80%]">
+                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Ibu Ratna (Guru IPA - Bandung) • 14:30</span>
+                                <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
+                                    Paper Grow ini sangat membantu untuk praktek IPAS Kurikulum Merdeka. Anak-anak di kelas sangat antusias waktu presentasi menggunakan model 3D (AR). Kertas daur ulangnya juga mengajarkan mereka soal lingkungan. Sangat direkomendasikan! 📚👍
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Chat 4 (Kiri - Orang Tua) -->
-                    <div class="flex items-start gap-3 group mt-4">
-                        <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-amber-200">👩‍👧</div>
-                        <div class="max-w-[80%]">
-                            <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Bunda Salsa (Jakarta) • Kemarin</span>
-                            <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
-                                Awalnya iseng beli buat aktivitas *weekend* bareng anak biar nggak main *gadget* terus. Ternyata sebagus itu konsepnya! Sekarang anakku jadi suka makan sayur gara-gara menanam sawinya sendiri 😂
+                        
+                        <!-- Chat 4 (Kiri - Orang Tua) -->
+                        <div class="flex items-start gap-3 group mt-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-amber-200">👩‍👧</div>
+                            <div class="max-w-[80%]">
+                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Bunda Salsa (Jakarta) • Kemarin</span>
+                                <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
+                                    Awalnya iseng beli buat aktivitas *weekend* bareng anak biar nggak main *gadget* terus. Ternyata sebagus itu konsepnya! Sekarang anakku jadi suka makan sayur gara-gara menanam sawinya sendiri 😂
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
 
-                <!-- Chat Input Dummy -->
-                <div class="bg-white p-4 border-t border-slate-100 flex gap-3 items-center shadow-[0_-5px_15px_rgba(0,0,0,0.02)] relative z-10">
-                    <button class="text-slate-400 hover:text-emerald-500 transition-colors p-2 bg-slate-50 rounded-full">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </button>
-                    <div class="flex-1 bg-slate-100 rounded-full px-5 py-3 text-sm text-slate-400 cursor-not-allowed border border-slate-200 flex items-center justify-between">
-                        <span>Tulis pengalaman belajarmu di sini...</span>
-                        <span class="text-slate-300">📎</span>
-                    </div>
-                    <button class="bg-emerald-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-emerald-600 hover:scale-105 transition-all shadow-md">
+                <!-- Chat Input Real Form -->
+                <form action="{{ route('edukasi.chat.store') }}" method="POST" class="bg-white p-4 border-t border-slate-100 flex gap-3 items-center shadow-[0_-5px_15px_rgba(0,0,0,0.02)] relative z-10">
+                    @csrf
+                    <input type="text" name="message" required placeholder="Tulis pengalaman belajarmu di sini..." class="flex-1 bg-slate-50 rounded-full px-5 py-3 text-sm text-slate-700 border border-slate-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all">
+                    <button type="submit" class="bg-emerald-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-emerald-600 hover:scale-105 transition-all shadow-md shrink-0">
                         <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
                     </button>
-                </div>
+                </form>
             </div>
         </div>
 

@@ -104,6 +104,26 @@ class PageController extends Controller
             ]
         ];
 
-        return view('edukasi.encyclopedia', compact('seeds'));
+        // Ambil data chat testimoni
+        $chats = \App\Models\CommunityChat::orderBy('created_at', 'desc')->take(20)->get();
+
+        return view('edukasi.encyclopedia', compact('seeds', 'chats'));
+    }
+
+    // Fungsi untuk menyimpan Chat Testimoni
+    public function storeChat(Request $request)
+    {
+        $request->validate([
+            'message' => 'required|string|max:1000'
+        ]);
+
+        \App\Models\CommunityChat::create([
+            'name' => auth()->check() ? auth()->user()->name : 'Petani Cilik Anonim',
+            'role' => auth()->check() ? (auth()->user()->is_admin ? 'Paper Grow Admin' : 'Siswa/Orang Tua') : 'Pengguna',
+            'message' => $request->message,
+            'is_admin' => auth()->check() ? auth()->user()->is_admin : false
+        ]);
+
+        return redirect()->back()->with('success', 'Cerita serumu berhasil dikirim!');
     }
 }
