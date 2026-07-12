@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/cart/remove/{cart}', [CartController::class, 'destroy'])->name('cart.destroy');
     
     // Checkout
+    Route::get('/checkout', [OrderController::class, 'checkoutForm'])->name('checkout.form');
     Route::post('/order/checkout', [OrderController::class, 'checkout'])->name('order.checkout');
     Route::get('/order/success/{order}', [OrderController::class, 'success'])->name('order.success');
 });

@@ -34,9 +34,14 @@
                         #PG-{{ str_pad($order->id, 5, '0', STR_PAD_LEFT) }}
                     </td>
                     <td class="px-6 py-4">
-                        <p class="font-bold text-slate-800">{{ $order->user->name }}</p>
-                        <p class="text-xs text-slate-500">{{ $order->user->email }}</p>
-                        <p class="text-xs text-slate-400 mt-1">{{ $order->created_at->format('d M Y, H:i') }}</p>
+                        <p class="font-bold text-slate-800">{{ $order->shipping_name ?? $order->user->name }}</p>
+                        <p class="text-xs text-slate-500">{{ $order->shipping_phone ?? $order->user->email }}</p>
+                        @if($order->shipping_address)
+                            <p class="text-xs text-slate-600 mt-1 line-clamp-2" title="{{ $order->shipping_address }}">
+                                📍 {{ $order->shipping_address }}
+                            </p>
+                        @endif
+                        <p class="text-xs text-slate-400 mt-2">🕒 {{ $order->created_at->format('d M Y, H:i') }}</p>
                     </td>
                     <td class="px-6 py-4">
                         <ul class="list-disc list-inside text-slate-600">

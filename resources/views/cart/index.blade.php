@@ -79,12 +79,9 @@
                     <span class="font-black text-2xl text-[#1E352F]">Rp {{ number_format($total, 0, ',', '.') }}</span>
                 </div>
 
-                <form action="{{ route('order.checkout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 transition-transform transform hover:-translate-y-1">
-                        Checkout Sekarang ➔
-                    </button>
-                </form>
+                <a href="{{ route('checkout.form') }}" class="block text-center w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 transition-transform transform hover:-translate-y-1">
+                    Lanjut ke Pengiriman ➔
+                </a>
             </div>
         </div>
     @else

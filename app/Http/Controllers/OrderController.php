@@ -10,9 +10,35 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
+    // Menampilkan halaman form checkout
+    public function checkoutForm()
+    {
+        $userId = auth()->id();
+        $carts = Cart::with('product')->where('user_id', $userId)->get();
+
+        if ($carts->isEmpty()) {
+            return redirect()->route('products.index')->withErrors(['cart' => 'Keranjang Anda kosong!']);
+        }
+
+        $subtotal = $carts->sum(function($item) {
+            return $item->quantity * $item->product->price;
+        });
+
+        $tax = $subtotal * 0.12; // PPN 12%
+        $totalPrice = $subtotal + $tax;
+
+        return view('checkout.index', compact('carts', 'subtotal', 'tax', 'totalPrice'));
+    }
+
     // Memproses Checkout dari Keranjang
     public function checkout(Request $request)
     {
+        $request->validate([
+            'shipping_name' => 'required|string|max:255',
+            'shipping_phone' => 'required|string|max:20',
+            'shipping_address' => 'required|string',
+        ]);
+
         $userId = auth()->id();
         $carts = Cart::with('product')->where('user_id', $userId)->get();
 
@@ -35,6 +61,9 @@ class OrderController extends Controller
                 'subtotal' => $subtotal,
                 'tax_amount' => $tax,
                 'total_price' => $totalPrice,
+                'shipping_name' => $request->shipping_name,
+                'shipping_phone' => $request->shipping_phone,
+                'shipping_address' => $request->shipping_address,
                 'status' => 'pending', // Menunggu Pembayaran
             ]);
 
@@ -60,8 +89,14 @@ class OrderController extends Controller
                     'gross_amount' => $totalPrice,
                 ],
                 'customer_details' => [
-                    'first_name' => auth()->user()->name,
+                    'first_name' => $request->shipping_name,
                     'email' => auth()->user()->email,
+                    'phone' => $request->shipping_phone,
+                    'shipping_address' => [
+                        'first_name' => $request->shipping_name,
+                        'phone' => $request->shipping_phone,
+                        'address' => $request->shipping_address,
+                    ]
                 ],
             ];
 
