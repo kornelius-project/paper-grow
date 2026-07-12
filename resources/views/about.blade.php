@@ -87,6 +87,133 @@
     </div>
 </div>
 
+<!-- Kalkulator Kebaikan Bumi (Eco-Calculator) -->
+<div class="py-24 bg-gradient-to-br from-slate-900 to-[#0f2e20] text-white px-4 relative overflow-hidden">
+    <!-- Ornamen Lingkungan -->
+    <div class="absolute -top-32 -left-32 w-[500px] h-[500px] bg-emerald-500/20 blur-[100px] rounded-full pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-[400px] h-[400px] bg-green-400/20 blur-[100px] rounded-full pointer-events-none"></div>
+    
+    <div class="max-w-5xl mx-auto relative z-10">
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold text-emerald-400 bg-emerald-900/50 px-4 py-2 rounded-full uppercase tracking-widest border border-emerald-700/50 shadow-sm inline-flex items-center gap-2 mb-4">
+                🌍 Fitur Interaktif
+            </span>
+            <h2 class="text-3xl md:text-5xl font-black mb-4">Kalkulator Kebaikan Bumi</h2>
+            <p class="text-slate-300 text-lg font-light max-w-2xl mx-auto">Geser slider di bawah ini untuk melihat dampak positif yang bisa kamu berikan kepada bumi hanya dengan menggunakan Paper Grow.</p>
+        </div>
+
+        <!-- Slider Area -->
+        <div class="bg-slate-800/50 backdrop-blur-xl p-8 md:p-12 rounded-3xl border border-slate-700/50 shadow-2xl text-center mb-12 relative">
+            <h3 class="text-xl text-slate-300 mb-6 font-medium">Berapa paket Paper Grow yang ingin kamu tanam?</h3>
+            
+            <div class="flex items-center justify-center mb-8">
+                <div class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300" id="calc-input-display">
+                    50
+                </div>
+                <span class="text-2xl text-slate-400 ml-4 font-bold">Paket</span>
+            </div>
+
+            <div class="relative max-w-3xl mx-auto px-4">
+                <input type="range" id="eco-slider" min="1" max="1000" value="50" class="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all">
+                <div class="flex justify-between text-xs text-slate-500 mt-4 font-bold uppercase tracking-wider">
+                    <span>1 Paket</span>
+                    <span>500 Paket</span>
+                    <span>1000 Paket</span>
+                </div>
+            </div>
+            
+            <!-- Dynamic Badge -->
+            <div class="mt-8">
+                <span id="eco-badge" class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 text-sm font-bold uppercase tracking-widest transition-all duration-300">
+                    🎖️ Sahabat Bumi
+                </span>
+            </div>
+        </div>
+
+        <!-- Result Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1: Sampah Diselamatkan -->
+            <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-4xl mb-4">♻️</div>
+                <div class="text-3xl font-black text-emerald-400 mb-1"><span id="res-paper">2.5</span> Kg</div>
+                <h4 class="text-sm font-bold text-slate-300 uppercase tracking-widest mb-2">Kertas Didaur Ulang</h4>
+                <p class="text-xs text-slate-400 font-light">Sampah kertas yang berhasil diselamatkan dari TPA.</p>
+            </div>
+            <!-- Card 2: CO2 Diserap -->
+            <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-4xl mb-4">💨</div>
+                <div class="text-3xl font-black text-emerald-400 mb-1"><span id="res-co2">10</span> Kg</div>
+                <h4 class="text-sm font-bold text-slate-300 uppercase tracking-widest mb-2">Karbon Diserap</h4>
+                <p class="text-xs text-slate-400 font-light">Estimasi gas rumah kaca (CO2) yang diserap per bulan.</p>
+            </div>
+            <!-- Card 3: Oksigen -->
+            <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700/50 text-center transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-4xl mb-4">🍃</div>
+                <div class="text-3xl font-black text-emerald-400 mb-1"><span id="res-o2">75</span> L</div>
+                <h4 class="text-sm font-bold text-slate-300 uppercase tracking-widest mb-2">Oksigen Dihasilkan</h4>
+                <p class="text-xs text-slate-400 font-light">Estimasi produksi oksigen bersih per bulan.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.getElementById('eco-slider');
+        const display = document.getElementById('calc-input-display');
+        const resPaper = document.getElementById('res-paper');
+        const resCo2 = document.getElementById('res-co2');
+        const resO2 = document.getElementById('res-o2');
+        const badge = document.getElementById('eco-badge');
+
+        // Rumus (Estimasi Edukatif):
+        // 1 Paket = 0.05 Kg kertas (50 gram)
+        // 1 Tanaman = 0.2 Kg CO2 diserap/bulan
+        // 1 Tanaman = 1.5 Liter O2 dihasilkan/bulan
+        const MULTIPLIER_PAPER = 0.05;
+        const MULTIPLIER_CO2 = 0.2;
+        const MULTIPLIER_O2 = 1.5;
+
+        function updateCalculator() {
+            const val = parseInt(slider.value);
+            
+            // Update Number Display
+            display.textContent = val.toLocaleString();
+
+            // Calculate Metrics
+            const paperVal = (val * MULTIPLIER_PAPER).toFixed(1);
+            const co2Val = (val * MULTIPLIER_CO2).toFixed(1);
+            const o2Val = (val * MULTIPLIER_O2).toFixed(1);
+
+            // Update DOM
+            resPaper.textContent = paperVal;
+            resCo2.textContent = co2Val;
+            resO2.textContent = o2Val;
+
+            // Update Badge Rank Logic
+            if(val < 50) {
+                badge.innerHTML = '🌱 Pemula Hijau';
+                badge.className = 'inline-flex items-center gap-2 px-6 py-2 rounded-full bg-slate-500/20 text-slate-300 border border-slate-500/30 text-sm font-bold uppercase tracking-widest transition-all duration-300';
+            } else if(val >= 50 && val < 250) {
+                badge.innerHTML = '🎖️ Sahabat Bumi';
+                badge.className = 'inline-flex items-center gap-2 px-6 py-2 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 text-sm font-bold uppercase tracking-widest transition-all duration-300';
+            } else if(val >= 250 && val < 750) {
+                badge.innerHTML = '🛡️ Pelindung Alam';
+                badge.className = 'inline-flex items-center gap-2 px-6 py-2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-sm font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.3)]';
+            } else {
+                badge.innerHTML = '👑 Pahlawan Ekologi';
+                badge.className = 'inline-flex items-center gap-2 px-6 py-2 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-sm font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_0_20px_rgba(245,158,11,0.4)]';
+            }
+        }
+
+        // Event Listener untuk pergerakan slider yang mulus (realtime)
+        slider.addEventListener('input', updateCalculator);
+        
+        // Panggil fungsi sekali saat load pertama
+        updateCalculator();
+    });
+</script>
+
 <!-- Peta Jejak Edukasi (Indonesia Map) - Natural & Clean Layout -->
 <div class="py-16 relative overflow-hidden bg-slate-50 border-t border-slate-200">
     <!-- Ornamen Latar Belakang Lembut -->
