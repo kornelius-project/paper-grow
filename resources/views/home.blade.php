@@ -168,52 +168,107 @@
 <!-- Section Simulasi Animasi Menanam Interaktif (Edukasi Modern) -->
 <div id="simulasi-tanam" class="bg-gradient-to-b from-slate-50 to-emerald-50/40 py-20 px-4 border-y border-slate-100 relative overflow-hidden">
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-green-100/50 blur-[100px] rounded-full pointer-events-none"></div>
-    <div class="max-w-6xl mx-auto relative z-10">
+    <div class="max-w-7xl mx-auto relative z-10">
         <div class="text-center mb-14">
             <span class="text-xs font-bold text-emerald-700 bg-emerald-100/60 px-4 py-2 rounded-full uppercase tracking-widest border border-emerald-200">
                 Praktik Langsung
             </span>
             <h2 class="text-3xl md:text-4xl font-black text-slate-900 mt-4 mb-3">Simulasi Menanam Kertas</h2>
-            <p class="text-slate-500 text-base font-light max-w-2xl mx-auto">Ikuti 7 langkah nyata di bawah ini untuk mengubah lembaran kertas bekas menjadi sayuran segar yang siap dipanen. Geser untuk melihat prosesnya!</p>
+            <p class="text-slate-500 text-base font-light max-w-2xl mx-auto">Ikuti 7 langkah nyata di bawah ini untuk mengubah lembaran kertas bekas menjadi sayuran segar yang siap dipanen.</p>
         </div>
 
-        <!-- Horizontal Scroll Snap Container -->
-        <div class="flex overflow-x-auto pb-10 pt-4 snap-x snap-mandatory gap-6 px-4 md:px-0 hide-scrollbar" style="scrollbar-width: none;">
+        <div class="relative group/slider px-4 md:px-12">
             
-            @php
-                $steps = [
-                    ['title' => 'Siapkan Media', 'desc' => 'Siapkan wadah pot dan isi dengan media tanam yang gembur (campuran tanah dan kompos).'],
-                    ['title' => 'Basahi Tanah', 'desc' => 'Siram tanah secara perlahan hingga seluruh permukaannya lembap merata agar benih mudah tumbuh.'],
-                    ['title' => 'Robek Kertas', 'desc' => 'Robek-robek produk Paper Grow yang sudah tak terpakai menjadi potongan-potongan kecil.'],
-                    ['title' => 'Tebarkan Kertas', 'desc' => 'Sebarkan robekan kertas berisi benih ajaib tadi tepat di atas permukaan tanah basah.'],
-                    ['title' => 'Tutup Tipis', 'desc' => 'Taburkan sedikit tanah lagi di atas potongan kertas agar tertutup tipis (maksimal 1 cm).'],
-                    ['title' => 'Penyiraman Rutin', 'desc' => 'Gunakan semprotan halus (spray) untuk menyiram secara rutin setiap pagi agar kelembapan terjaga.'],
-                    ['title' => 'Tunggu Tunas!', 'desc' => 'Dalam beberapa hari, keajaiban terjadi! Benih akan pecah dan mulai menumbuhkan tunas daun baru.'],
-                ];
-            @endphp
+            <!-- Tombol Kiri (Desktop) -->
+            <button id="btn-prev-sim" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-emerald-50 text-emerald-700 p-4 rounded-full shadow-lg border border-emerald-100 hidden md:flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-all transform -translate-x-4 group-hover/slider:translate-x-0" onclick="document.getElementById('sim-container').scrollBy({left: -320, behavior: 'smooth'})">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            
+            <!-- Horizontal Scroll Snap Container -->
+            <div id="sim-container" class="flex overflow-x-auto pb-10 pt-4 gap-6 px-2 hide-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory" style="scrollbar-width: none;">
+                
+                @php
+                    $steps = [
+                        ['title' => 'Siapkan Media', 'desc' => 'Isi wadah pot dengan media tanam gembur (campuran tanah dan kompos).'],
+                        ['title' => 'Basahi Tanah', 'desc' => 'Siram tanah perlahan hingga permukaannya lembap agar benih mudah tumbuh.'],
+                        ['title' => 'Robek Kertas', 'desc' => 'Robek-robek produk Paper Grow yang tak terpakai menjadi potongan kecil.'],
+                        ['title' => 'Tebarkan', 'desc' => 'Sebarkan robekan kertas berisi benih tadi di atas permukaan tanah.'],
+                        ['title' => 'Tutup Tipis', 'desc' => 'Taburkan sedikit tanah lagi di atas potongan kertas agar tertutup (maks 1 cm).'],
+                        ['title' => 'Penyiraman', 'desc' => 'Gunakan semprotan halus (spray) secara rutin setiap pagi untuk menjaga kelembapan.'],
+                        ['title' => 'Tunggu Tunas!', 'desc' => 'Dalam beberapa hari, benih ajaib akan pecah dan menumbuhkan daun baru.'],
+                    ];
+                @endphp
 
-            @foreach($steps as $index => $step)
-            <div class="min-w-[280px] md:min-w-[320px] bg-white rounded-3xl p-5 shadow-sm hover:shadow-xl border border-slate-100 snap-center shrink-0 group transition-all duration-300 hover:-translate-y-2">
-                <div class="overflow-hidden rounded-2xl mb-5 aspect-square relative bg-slate-50 border border-slate-100 shadow-inner">
-                    <img src="{{ asset('images/step' . ($index + 1) . '.jpeg') }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Langkah {{ $index + 1 }}">
-                    <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-md text-emerald-700 font-black w-10 h-10 rounded-full flex items-center justify-center shadow-lg border border-emerald-100">
-                        0{{ $index + 1 }}
+                @foreach($steps as $index => $step)
+                <div class="min-w-[220px] md:min-w-[260px] w-[220px] md:w-[260px] bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl border border-slate-100 snap-center shrink-0 group transition-all duration-300 hover:-translate-y-2 select-none">
+                    <div class="overflow-hidden rounded-xl mb-4 aspect-[4/3] relative bg-slate-50 border border-slate-100 shadow-inner pointer-events-none">
+                        <img src="{{ asset('images/step' . ($index + 1) . '.jpeg') }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Langkah {{ $index + 1 }}">
+                        <div class="absolute top-2 left-2 bg-white/95 backdrop-blur-md text-emerald-700 font-black w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-emerald-50 text-sm">
+                            {{ $index + 1 }}
+                        </div>
                     </div>
+                    <h3 class="text-lg font-black text-slate-800 mb-1.5 group-hover:text-emerald-600 transition-colors">{{ $step['title'] }}</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed font-light">{{ $step['desc'] }}</p>
                 </div>
-                <h3 class="text-xl font-black text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">{{ $step['title'] }}</h3>
-                <p class="text-sm text-slate-500 leading-relaxed font-light">{{ $step['desc'] }}</p>
+                @endforeach
+                
             </div>
-            @endforeach
+            
+            <!-- Tombol Kanan (Desktop) -->
+            <button id="btn-next-sim" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-emerald-50 text-emerald-700 p-4 rounded-full shadow-lg border border-emerald-100 hidden md:flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-all transform translate-x-4 group-hover/slider:translate-x-0" onclick="document.getElementById('sim-container').scrollBy({left: 320, behavior: 'smooth'})">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </button>
             
         </div>
         
-        <div class="text-center mt-4 hidden md:block">
-            <p class="text-xs text-slate-400 font-medium bg-white/50 backdrop-blur-sm inline-block px-5 py-2 rounded-full shadow-sm border border-slate-100/50">
-                <i>Scroll</i> horizontal atau geser layar sentuh Anda untuk melihat langkah selanjutnya &rarr;
+        <div class="text-center mt-2">
+            <p class="text-[11px] text-slate-400 font-medium bg-white/50 backdrop-blur-sm inline-flex items-center gap-2 px-4 py-1.5 rounded-full shadow-sm border border-slate-100/50">
+                <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                <span>Tarik/geser gambar untuk melihat tahap selanjutnya</span>
             </p>
         </div>
     </div>
 </div>
+
+<script>
+    // JS Drag to Scroll untuk Desktop UX
+    document.addEventListener('DOMContentLoaded', () => {
+        const slider = document.getElementById('sim-container');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.style.cursor = 'grabbing';
+            // Nonaktifkan efek snap sementara sedang didrag
+            slider.style.scrollSnapType = 'none';
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+            slider.style.scrollSnapType = 'x mandatory';
+        });
+        
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+            // Kembalikan efek snap saat dilepas agar rapi
+            slider.style.scrollSnapType = 'x mandatory';
+        });
+        
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5; // Kecepatan seret
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    });
+</script>
 <!-- Section Statistik / Social Proof (Pindah ke Bawah) -->
 <div class="bg-white pt-24 pb-12 relative z-20 border-t border-slate-100">
     <div class="max-w-6xl mx-auto px-4">
