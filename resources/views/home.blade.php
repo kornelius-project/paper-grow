@@ -168,67 +168,99 @@
 <!-- Section Simulasi Animasi Menanam Interaktif (Edukasi Modern) -->
 <div id="simulasi-tanam" class="bg-gradient-to-b from-slate-50 to-emerald-50/40 py-20 px-4 border-y border-slate-100 relative overflow-hidden">
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-green-100/50 blur-[100px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-100/40 blur-[100px] rounded-full pointer-events-none"></div>
+    
     <div class="max-w-7xl mx-auto relative z-10">
-        <div class="text-center mb-14">
-            <span class="text-xs font-bold text-emerald-700 bg-emerald-100/60 px-4 py-2 rounded-full uppercase tracking-widest border border-emerald-200">
-                Praktik Langsung
+        <div class="text-center mb-16">
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-100/80 px-5 py-2 rounded-full uppercase tracking-widest border border-emerald-200 shadow-sm inline-flex items-center gap-2">
+                <span class="text-base">🧑‍🔬</span> Kelas Sains Interaktif
             </span>
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mt-4 mb-3">Simulasi Menanam Kertas</h2>
-            <p class="text-slate-500 text-base font-light max-w-2xl mx-auto">Ikuti 7 langkah nyata di bawah ini untuk mengubah lembaran kertas bekas menjadi sayuran segar yang siap dipanen.</p>
+            <h2 class="text-3xl md:text-5xl font-black text-slate-900 mt-5 mb-4">Cara Menanam <span class="text-emerald-600">Paper Grow</span></h2>
+            <p class="text-slate-500 text-base md:text-lg font-light max-w-2xl mx-auto">Ternyata menanam sayuran itu sangat mudah! Mari kita pelajari 7 tahapan proses tumbuhnya tunas ajaib dari selembar kertas daur ulang.</p>
         </div>
 
-        <div class="relative group/slider px-4 md:px-12">
+        <div class="relative group/slider px-2 md:px-12">
             
             <!-- Tombol Kiri (Desktop) -->
-            <button id="btn-prev-sim" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-emerald-50 text-emerald-700 p-4 rounded-full shadow-lg border border-emerald-100 hidden md:flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-all transform -translate-x-4 group-hover/slider:translate-x-0" onclick="document.getElementById('sim-container').scrollBy({left: -320, behavior: 'smooth'})">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+            <button id="btn-prev-sim" class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-emerald-50 text-emerald-700 p-5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-emerald-100 hidden md:flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-all transform -translate-x-4 group-hover/slider:translate-x-0 active:scale-95" onclick="document.getElementById('sim-container').scrollBy({left: -380, behavior: 'smooth'})">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
             </button>
             
             <!-- Horizontal Scroll Snap Container -->
-            <div id="sim-container" class="flex overflow-x-auto pb-10 pt-4 gap-6 px-2 hide-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory" style="scrollbar-width: none;">
+            <div id="sim-container" class="flex overflow-x-auto pb-12 pt-6 gap-8 px-4 hide-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory" style="scrollbar-width: none;">
                 
                 @php
                     $steps = [
-                        ['title' => 'Siapkan Media', 'desc' => 'Isi wadah pot dengan media tanam gembur (campuran tanah dan kompos).'],
-                        ['title' => 'Basahi Tanah', 'desc' => 'Siram tanah perlahan hingga permukaannya lembap agar benih mudah tumbuh.'],
-                        ['title' => 'Robek Kertas', 'desc' => 'Robek-robek produk Paper Grow yang tak terpakai menjadi potongan kecil.'],
-                        ['title' => 'Tebarkan', 'desc' => 'Sebarkan robekan kertas berisi benih tadi di atas permukaan tanah.'],
-                        ['title' => 'Tutup Tipis', 'desc' => 'Taburkan sedikit tanah lagi di atas potongan kertas agar tertutup (maks 1 cm).'],
-                        ['title' => 'Penyiraman', 'desc' => 'Gunakan semprotan halus (spray) secara rutin setiap pagi untuk menjaga kelembapan.'],
-                        ['title' => 'Tunggu Tunas!', 'desc' => 'Dalam beberapa hari, benih ajaib akan pecah dan menumbuhkan daun baru.'],
+                        ['icon' => '📄', 'tag' => 'Fase Persiapan', 'title' => 'Siapkan Paper Grow', 'desc' => 'Ambil lembaran kertas Paper Grow milikmu. Kertas ini mengandung benih sayuran tersembunyi di dalamnya.'],
+                        ['icon' => '🪴', 'tag' => 'Fase Persiapan', 'title' => 'Siapkan Tanah', 'desc' => 'Siapkan pot kesayanganmu dan isi dengan tanah yang gembur serta kaya akan nutrisi kompos.'],
+                        ['icon' => '🌱', 'tag' => 'Fase Penanaman', 'title' => 'Taruh Benih', 'desc' => 'Letakkan potongan-potongan kertas Paper Grow tadi tepat di atas permukaan media tanam.'],
+                        ['icon' => '🧤', 'tag' => 'Fase Penanaman', 'title' => 'Timbun Tanah', 'desc' => 'Tutup tipis kertas benihmu dengan sedikit tanah (maksimal 1 cm) agar benih tersembunyi dengan aman.'],
+                        ['icon' => '💧', 'tag' => 'Fase Perawatan', 'title' => 'Siram dengan Rutin', 'desc' => 'Siramlah menggunakan semprotan halus setiap pagi untuk menjaga kelembapan agar benih cepat bangun.'],
+                        ['icon' => '🌿', 'tag' => 'Fase Observasi', 'title' => 'Benih Mulai Tumbuh', 'desc' => 'Hore! Dalam beberapa hari, benih kecil akan memecahkan cangkangnya dan menumbuhkan tunas hijau yang lucu.'],
+                        ['icon' => '✨', 'tag' => 'Fase Panen', 'title' => 'Sudah Terlihat Indah', 'desc' => 'Kini tunasmu sudah tumbuh menjadi sayuran yang subur dan sangat indah, siap untuk dipanen!'],
                     ];
                 @endphp
 
                 @foreach($steps as $index => $step)
-                <div class="min-w-[220px] md:min-w-[260px] w-[220px] md:w-[260px] bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl border border-slate-100 snap-center shrink-0 group transition-all duration-300 hover:-translate-y-2 select-none">
-                    <div class="overflow-hidden rounded-xl mb-4 aspect-[4/3] relative bg-slate-50 border border-slate-100 shadow-inner pointer-events-none">
+                <div class="min-w-[260px] md:min-w-[340px] w-[260px] md:w-[340px] bg-white rounded-3xl p-5 shadow-[0_4px_20px_rgb(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgb(16,185,129,0.15)] border-2 border-slate-50 hover:border-emerald-100 snap-center shrink-0 group transition-all duration-300 hover:-translate-y-3 select-none relative overflow-hidden">
+                    
+                    <!-- Latar Belakang Kartu (Glow) saat di-hover -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-50/0 to-green-50/0 group-hover:from-emerald-50/40 group-hover:to-green-100/40 transition-colors duration-500 z-0 pointer-events-none"></div>
+                    
+                    <!-- Gambar Simulasi -->
+                    <div class="overflow-hidden rounded-2xl mb-5 aspect-[5/4] relative bg-slate-50 border border-slate-100 shadow-inner pointer-events-none z-10">
                         <img src="{{ asset('images/step' . ($index + 1) . '.jpeg') }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Langkah {{ $index + 1 }}">
-                        <div class="absolute top-2 left-2 bg-white/95 backdrop-blur-md text-emerald-700 font-black w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-emerald-50 text-sm">
+                        
+                        <!-- Lencana Tahap Angka Besar -->
+                        <div class="absolute -top-1 -left-1 bg-white text-slate-800 font-black w-14 h-14 rounded-br-3xl flex items-center justify-center shadow-lg border-b border-r border-slate-100/50 text-xl group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
                             {{ $index + 1 }}
                         </div>
                     </div>
-                    <h3 class="text-lg font-black text-slate-800 mb-1.5 group-hover:text-emerald-600 transition-colors">{{ $step['title'] }}</h3>
-                    <p class="text-xs text-slate-500 leading-relaxed font-light">{{ $step['desc'] }}</p>
+                    
+                    <div class="relative z-10">
+                        <!-- Edukasi Tag -->
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-lg">{{ $step['icon'] }}</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-slate-100/80 px-2 py-1 rounded-md">{{ $step['tag'] }}</span>
+                        </div>
+                        
+                        <!-- Konten Edukasi -->
+                        <h3 class="text-xl font-black text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">{{ $step['title'] }}</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed font-normal">{{ $step['desc'] }}</p>
+                    </div>
+                    
+                    <!-- Ornamen garis -->
+                    <div class="absolute bottom-0 left-10 right-10 h-1 bg-emerald-100 rounded-t-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </div>
                 @endforeach
                 
             </div>
             
             <!-- Tombol Kanan (Desktop) -->
-            <button id="btn-next-sim" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-emerald-50 text-emerald-700 p-4 rounded-full shadow-lg border border-emerald-100 hidden md:flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-all transform translate-x-4 group-hover/slider:translate-x-0" onclick="document.getElementById('sim-container').scrollBy({left: 320, behavior: 'smooth'})">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            <button id="btn-next-sim" class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-emerald-50 text-emerald-700 p-5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-emerald-100 hidden md:flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-all transform translate-x-4 group-hover/slider:translate-x-0 active:scale-95" onclick="document.getElementById('sim-container').scrollBy({left: 380, behavior: 'smooth'})">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
             </button>
             
         </div>
         
-        <div class="text-center mt-2">
-            <p class="text-[11px] text-slate-400 font-medium bg-white/50 backdrop-blur-sm inline-flex items-center gap-2 px-4 py-1.5 rounded-full shadow-sm border border-slate-100/50">
-                <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-                <span>Tarik/geser gambar untuk melihat tahap selanjutnya</span>
+        <div class="text-center mt-2 pb-8">
+            <p class="text-xs text-emerald-600/80 font-medium bg-emerald-50/50 backdrop-blur-sm inline-flex items-center gap-2 px-5 py-2.5 rounded-full shadow-sm border border-emerald-100/50">
+                <svg class="w-4 h-4 animate-bounce-x" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                <span>Geser ke samping untuk mengikuti eksperimen botani ini!</span>
             </p>
         </div>
     </div>
 </div>
+
+<style>
+    @keyframes bounce-x {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(3px); }
+    }
+    .animate-bounce-x {
+        animation: bounce-x 2s infinite;
+    }
+</style>
 
 <script>
     // JS Drag to Scroll untuk Desktop UX
