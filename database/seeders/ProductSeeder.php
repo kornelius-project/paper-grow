@@ -24,7 +24,7 @@ class ProductSeeder extends Seeder
             'sheets_per_pack' => 5,
             'qr_code_image' => 'bayam.jpg', // <-- Mengarah ke public/images/bayam.jpg
             'price' => 15000,
-            'image' => 'product-mockup.png',
+            'image' => 'bayam.jpeg',
             'stock' => 150
         ]);
 
@@ -37,7 +37,7 @@ class ProductSeeder extends Seeder
             'sheets_per_pack' => 5,
             'qr_code_image' => 'sawi.jpg', // <-- Mengarah ke public/images/sawi.jpg
             'price' => 15000,
-            'image' => 'product-mockup.png',
+            'image' => 'sawi.jpeg',
             'stock' => 150
         ]);
 
@@ -50,7 +50,7 @@ class ProductSeeder extends Seeder
             'sheets_per_pack' => 5,
             'qr_code_image' => 'selada.jpg', // <-- Mengarah ke public/images/selada.jpg
             'price' => 15000,
-            'image' => 'product-mockup.png',
+            'image' => 'selada.jpeg',
             'stock' => 150
         ]);
     }
