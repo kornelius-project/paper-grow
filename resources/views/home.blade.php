@@ -75,9 +75,9 @@
                 
                 <!-- Gambar Produk Asli (Menggantikan CSS) -->
                 <div class="relative w-full h-full rounded-xl overflow-hidden group shadow-inner">
-                    <img src="{{ asset('images/papergrow-beranda.png') }}" 
+                    <img src="{{ asset('images/paper-grow beranda.png') }}" 
                          alt="Produk Paper Grow" 
-                         onerror="this.src='{{ asset('images/papergrow-beranda.jpg') }}'"
+                         onerror="this.src='{{ asset('images/paper-grow beranda.jpg') }}'"
                          class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
                     
                     <!-- Animasi Garis Scan AR -->
