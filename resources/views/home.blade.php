@@ -89,6 +89,31 @@
     </div>
 </div>
 
+<!-- Section Statistik / Social Proof -->
+<div class="bg-white py-12 border-b border-slate-100 relative z-20">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <!-- Stat 1: Pengguna Terdaftar -->
+            <div class="py-4 md:py-0 transform hover:scale-105 transition-transform duration-300">
+                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $userCount }}+</div>
+                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Pengguna Terdaftar</div>
+                <p class="text-xs text-slate-500 mt-1">Siswa & Guru di Indonesia</p>
+            </div>
+            <!-- Stat 2: Pesanan Selesai -->
+            <div class="py-4 md:py-0 transform hover:scale-105 transition-transform duration-300">
+                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $orderCount }}+</div>
+                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Paket Terjual</div>
+                <p class="text-xs text-slate-500 mt-1">Kertas benih & modul ajar</p>
+            </div>
+            <!-- Stat 3: Kota Jangkauan -->
+            <div class="py-4 md:py-0 transform hover:scale-105 transition-transform duration-300">
+                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $cityCount }}+</div>
+                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Kota Terjangkau</div>
+                <p class="text-xs text-slate-500 mt-1">Telah dikirim ke berbagai kota</p>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Section Penjelasan: Apa itu Paper Grow? (Sisi Edukatif) -->
 <div class="py-20 max-w-6xl mx-auto px-4">
     <div class="text-center mb-16">

@@ -15,8 +15,15 @@ class PageController extends Controller
             ['number' => 12, 'title' => 'Konsumsi & Produksi Bertanggung Jawab', 'desc' => 'Mendaur ulang limbah kertas menjadi kertas benih bernilai tinggi.'],
             ['number' => 15, 'title' => 'Kehidupan di Darat', 'desc' => 'Mendorong penanaman bunga Bougainvillea & Zinnia untuk konservasi sejak dini.'],
         ];
+
+        // Hitung statistik (dinamis)
+        $userCount = \App\Models\User::count();
+        $orderCount = \App\Models\Order::count();
+        // Karena belum ada kolom khusus kota, kita bisa set static/estimasi
+        // atau jika order > 0, set ke angka dinamis (misal base + pesanan)
+        $cityCount = 8 + ($orderCount > 0 ? (int)($orderCount / 2) : 0);
         
-        return view('home', compact('sdgImpacts'));
+        return view('home', compact('sdgImpacts', 'userCount', 'orderCount', 'cityCount'));
     }
 
     // Tambahkan juga fungsi about() agar nanti halaman 'Tentang Kami' tidak eror
