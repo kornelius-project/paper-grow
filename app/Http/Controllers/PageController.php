@@ -45,7 +45,7 @@ class PageController extends Controller
         [
             'name' => 'Kornelius Candra Kurniawan',
             'role' => 'Chief Technology Officer (CTO)',
-            'image' => 'kornelius.jpg',
+            'image' => 'kornelius.JPG',
             'bio' => 'Mengembangkan, mengelola, dan mengintegrasikan konten visual edukasi 3D & Augmented Reality interaktif.'
         ]
     ];
