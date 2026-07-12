@@ -195,7 +195,7 @@
                 
                 @php
                     $steps = [
-                        ['icon' => '📄', 'tag' => 'Fase Persiapan', 'title' => 'Siapkan Paper Grow', 'desc' => 'Ambil lembaran kertas Paper Grow milikmu. Kertas ini mengandung benih sayuran tersembunyi di dalamnya.'],
+                        ['icon' => '📄', 'tag' => 'Fase Persiapan', 'title' => 'Siapkan Paper Grow', 'desc' => 'Ambil lembaran kertas Paper Grow dan rendam di air sejenak agar kertas lembap dan siap ditanam.'],
                         ['icon' => '🪴', 'tag' => 'Fase Persiapan', 'title' => 'Siapkan Tanah', 'desc' => 'Siapkan pot kesayanganmu dan isi dengan tanah yang gembur serta kaya akan nutrisi kompos.'],
                         ['icon' => '🌱', 'tag' => 'Fase Penanaman', 'title' => 'Taruh Benih', 'desc' => 'Letakkan potongan-potongan kertas Paper Grow tadi tepat di atas permukaan media tanam.'],
                         ['icon' => '🧤', 'tag' => 'Fase Penanaman', 'title' => 'Timbun Tanah', 'desc' => 'Tutup tipis kertas benihmu dengan sedikit tanah (maksimal 1 cm) agar benih tersembunyi dengan aman.'],
