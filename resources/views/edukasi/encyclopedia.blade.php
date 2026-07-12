@@ -166,56 +166,56 @@
                     
                     @if(isset($chats) && $chats->count() > 0)
                         @foreach($chats->reverse() as $chat)
-                            <div class="flex items-start gap-3 group mt-4 {{ $chat->is_admin ? 'flex-row-reverse' : '' }}">
-                                <div class="w-10 h-10 rounded-full {{ $chat->is_admin ? 'bg-emerald-100 border-emerald-200' : 'bg-blue-100 border-blue-200' }} flex items-center justify-center text-lg shrink-0 shadow-sm border">{{ $chat->is_admin ? '🤖' : '👦' }}</div>
+                            <div class="flex items-start gap-3 group mt-4 {{ $chat->is_admin ? '' : 'flex-row-reverse' }}">
+                                <div class="w-10 h-10 rounded-full {{ $chat->is_admin ? 'bg-emerald-100 border-emerald-200' : 'bg-blue-100 border-blue-200' }} flex items-center justify-center text-lg shrink-0 shadow-sm border">{{ $chat->is_admin ? '👨‍🔬' : '👦' }}</div>
                                 <div class="max-w-[80%]">
-                                    <span class="text-[11px] text-slate-400 font-bold {{ $chat->is_admin ? 'mr-1 text-right' : 'ml-1' }} mb-1 block tracking-wide">{{ $chat->name }} ({{ $chat->role }}) • {{ $chat->created_at->diffForHumans() }}</span>
-                                    <div class="{{ $chat->is_admin ? 'bg-emerald-100 border-emerald-200 text-emerald-900 text-right rounded-tr-sm' : 'bg-white border-slate-200 text-slate-700 rounded-tl-sm' }} p-4 rounded-2xl shadow-sm border text-sm leading-relaxed group-hover:shadow-md transition-shadow">
-                                        {{ $chat->message }}
+                                    <span class="text-[11px] text-slate-400 font-bold {{ $chat->is_admin ? 'ml-1' : 'mr-1 text-right' }} mb-1 block tracking-wide">{{ $chat->name }} ({{ $chat->role }}) • {{ $chat->created_at->diffForHumans() }}</span>
+                                    <div class="{{ $chat->is_admin ? 'bg-emerald-100 border-emerald-200 text-emerald-900 rounded-tl-sm' : 'bg-white border-slate-200 text-slate-700 text-right rounded-tr-sm' }} p-4 rounded-2xl shadow-sm border text-sm leading-relaxed group-hover:shadow-md transition-shadow">
+                                        {!! nl2br(e($chat->message)) !!}
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                     @else
-                        <!-- Chat 1 (Kiri - Siswa) -->
-                        <div class="flex items-start gap-3 group">
+                        <!-- Chat 1 (Kanan - Siswa) -->
+                        <div class="flex items-start gap-3 flex-row-reverse group mt-4">
                             <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-blue-200">👦</div>
                             <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Siswa Penasaran (Jakarta) • 09:00</span>
-                                <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
+                                <span class="text-[11px] text-slate-400 font-bold mr-1 mb-1 block text-right tracking-wide">Siswa Penasaran (Jakarta) • 09:00</span>
+                                <div class="bg-white p-4 rounded-2xl rounded-tr-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed text-right group-hover:shadow-md transition-shadow">
                                     Prof, kenapa ya daun sayuranku warnanya hijau? Bukannya cahaya matahari warnanya kuning atau putih? 🤔
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Chat 2 (Kanan - Admin/Sistem) -->
-                        <div class="flex items-start gap-3 flex-row-reverse group mt-2">
+                        <!-- Chat 2 (Kiri - Bot/Admin) -->
+                        <div class="flex items-start gap-3 group mt-2">
                             <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-emerald-200">👨‍🔬</div>
                             <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold mr-1 mb-1 block text-right tracking-wide">Profesor Grow • 09:15</span>
-                                <div class="bg-emerald-100 p-4 rounded-2xl rounded-tr-sm shadow-sm border border-emerald-200 text-emerald-900 text-sm leading-relaxed text-right group-hover:shadow-md transition-shadow">
+                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Profesor Grow • 09:15</span>
+                                <div class="bg-emerald-100 p-4 rounded-2xl rounded-tl-sm shadow-sm border border-emerald-200 text-emerald-900 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
                                     Pertanyaan yang sangat cerdas! Daun berwarna hijau karena memiliki pigmen bernama <b>Klorofil</b>. Klorofil ini menyerap sinar matahari berwarna merah dan biru, tapi "memantulkan" warna hijau ke mata kita. Fungsinya adalah untuk memasak makanan bagi tanaman yang disebut proses Fotosintesis! 🍃✨
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Chat 3 (Kiri - Siswa) -->
-                        <div class="flex items-start gap-3 group mt-6">
+                        <!-- Chat 3 (Kanan - Siswa) -->
+                        <div class="flex items-start gap-3 flex-row-reverse group mt-6">
                             <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-pink-200">👧</div>
                             <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Alya (Bandung) • 13:20</span>
-                                <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
+                                <span class="text-[11px] text-slate-400 font-bold mr-1 mb-1 block text-right tracking-wide">Alya (Bandung) • 13:20</span>
+                                <div class="bg-white p-4 rounded-2xl rounded-tr-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed text-right group-hover:shadow-md transition-shadow">
                                     Kalau bijinya terkurung di dalam kertas, apa nggak susah tumbuhnya Prof? Terus kertasnya akan jadi sampah lagi?
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Chat 4 (Kanan - Admin) -->
-                        <div class="flex items-start gap-3 flex-row-reverse group mt-2">
+                        <!-- Chat 4 (Kiri - Admin) -->
+                        <div class="flex items-start gap-3 group mt-2">
                             <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-emerald-200">👨‍🔬</div>
                             <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold mr-1 mb-1 block text-right tracking-wide">Profesor Grow • 13:45</span>
-                                <div class="bg-emerald-100 p-4 rounded-2xl rounded-tr-sm shadow-sm border border-emerald-200 text-emerald-900 text-sm leading-relaxed text-right group-hover:shadow-md transition-shadow">
+                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Profesor Grow • 13:45</span>
+                                <div class="bg-emerald-100 p-4 rounded-2xl rounded-tl-sm shadow-sm border border-emerald-200 text-emerald-900 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
                                     Tidak susah, Alya! Kertas <i>Paper Grow</i> terbuat dari bubur kertas daur ulang tanpa bahan kimia keras. Saat dibasahi, kertasnya akan melunak. Dan hebatnya, kertas tersebut 100% <i>biodegradable</i> (dapat terurai oleh alam) sehingga lama-lama akan menyatu dengan tanah dan menjadi kompos yang menyuburkan akar tunasmu! 🌱
                                 </div>
                             </div>

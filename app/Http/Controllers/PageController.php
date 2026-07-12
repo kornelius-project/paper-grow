@@ -110,20 +110,50 @@ class PageController extends Controller
         return view('edukasi.encyclopedia', compact('seeds', 'chats'));
     }
 
-    // Fungsi untuk menyimpan Chat Testimoni
+    // Fungsi untuk menyimpan Chat Testimoni dan Auto-Responder AI
     public function storeChat(Request $request)
     {
         $request->validate([
             'message' => 'required|string|max:1000'
         ]);
 
+        $userMessage = $request->message;
+
+        // 1. Simpan pesan user (Selalu di kanan, is_admin = false)
         \App\Models\CommunityChat::create([
-            'name' => auth()->check() ? auth()->user()->name : 'Petani Cilik Anonim',
-            'role' => auth()->check() ? (auth()->user()->is_admin ? 'Paper Grow Admin' : 'Siswa/Orang Tua') : 'Pengguna',
-            'message' => $request->message,
-            'is_admin' => auth()->check() ? auth()->user()->is_admin : false
+            'name' => auth()->check() ? auth()->user()->name : 'Petani Cilik',
+            'role' => auth()->check() ? (auth()->user()->is_admin ? 'Admin' : 'Siswa') : 'Siswa',
+            'message' => $userMessage,
+            'is_admin' => false
         ]);
 
-        return redirect()->back()->with('success', 'Cerita serumu berhasil dikirim!');
+        // 2. Logika AI Auto-Responder Berbasis Kata Kunci
+        $lowerMessage = strtolower($userMessage);
+        
+        $botReply = "Wah, pertanyaan yang bagus! Sayangnya Profesor Grow saat ini hanya difokuskan untuk menjawab seputar cara menanam, biji, dan informasi mengenai produk Paper Grow. Coba tanyakan hal lain seputar itu ya! 🌱";
+
+        if (str_contains($lowerMessage, 'tumbuh') || str_contains($lowerMessage, 'lama') || str_contains($lowerMessage, 'waktu')) {
+            $botReply = "Biasanya benih dari Paper Grow akan mulai berkecambah (tumbuh) dalam waktu 3 hingga 7 hari, tergantung dari jenis benihnya. Pastikan tanahnya selalu lembap ya! ⏱️🌱";
+        } elseif (str_contains($lowerMessage, 'tanam') || str_contains($lowerMessage, 'cara') || str_contains($lowerMessage, 'biji')) {
+            $botReply = "Cara menanamnya sangat mudah! Robek kertas Paper Grow menjadi potongan kecil, taruh di atas pot berisi tanah subur, tutup tipis dengan tanah lagi, lalu siram dengan air hingga lembap. Jangan lupa taruh di tempat yang terkena sinar matahari! ☀️💦";
+        } elseif (str_contains($lowerMessage, 'apa') && str_contains($lowerMessage, 'paper grow')) {
+            $botReply = "Paper Grow adalah kertas daur ulang inovatif yang di dalamnya sudah tertanam biji tanaman asli (seperti bayam, caisim, atau bunga). Daripada dibuang jadi sampah, kertas ini bisa kamu tanam dan akan tumbuh menjadi sayuran atau bunga sungguhan! ♻️🌿";
+        } elseif (str_contains($lowerMessage, 'beli') || str_contains($lowerMessage, 'harga') || str_contains($lowerMessage, 'pesan') || str_contains($lowerMessage, 'produk')) {
+            $botReply = "Kamu bisa melihat berbagai paket Paper Grow beserta harganya di menu 'Produk' yang ada di bagian atas website ini. Kami punya paket Starter Kit yang seru banget lho! 🛒✨";
+        } elseif (str_contains($lowerMessage, 'kertas') || str_contains($lowerMessage, 'sampah') || str_contains($lowerMessage, 'daur ulang')) {
+            $botReply = "Betul sekali! Kertas Paper Grow terbuat dari 100% limbah kertas yang didaur ulang secara alami tanpa bahan kimia berbahaya, sehingga sangat aman untuk tanah dan bisa terurai sepenuhnya (biodegradable). 🌍♻️";
+        } elseif (str_contains($lowerMessage, 'matahari') || str_contains($lowerMessage, 'siram') || str_contains($lowerMessage, 'air') || str_contains($lowerMessage, 'rawat')) {
+            $botReply = "Merawatnya gampang banget! Siram potmu sehari sekali saja (jangan sampai tergenang air) dan pastikan potnya terkena sinar matahari pagi yang cukup. Tanaman sangat butuh cahaya untuk fotosintesis! 🌞💧";
+        }
+
+        // 3. Simpan pesan balasan dari Bot (Selalu di kiri, is_admin = true)
+        \App\Models\CommunityChat::create([
+            'name' => 'Profesor Grow',
+            'role' => 'AI Assistant',
+            'message' => $botReply,
+            'is_admin' => true 
+        ]);
+
+        return redirect()->back()->with('success', 'Pertanyaan terkirim!');
     }
 }
