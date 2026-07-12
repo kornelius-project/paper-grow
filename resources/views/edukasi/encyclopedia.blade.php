@@ -177,46 +177,13 @@
                             </div>
                         @endforeach
                     @else
-                        <!-- Chat 1 (Kanan - Siswa) -->
-                        <div class="flex items-start gap-3 flex-row-reverse group mt-4">
-                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-blue-200">👦</div>
-                            <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold mr-1 mb-1 block text-right tracking-wide">Siswa Penasaran (Jakarta) • 09:00</span>
-                                <div class="bg-white p-4 rounded-2xl rounded-tr-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed text-right group-hover:shadow-md transition-shadow">
-                                    Prof, kenapa ya daun sayuranku warnanya hijau? Bukannya cahaya matahari warnanya kuning atau putih? 🤔
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Chat 2 (Kiri - Bot/Admin) -->
-                        <div class="flex items-start gap-3 group mt-2">
+                        <!-- Pesan Selamat Datang (Kiri - Bot/Admin) -->
+                        <div class="flex items-start gap-3 group mt-4">
                             <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-emerald-200">👨‍🔬</div>
                             <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Profesor Grow • 09:15</span>
+                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Profesor Grow • Baru Saja</span>
                                 <div class="bg-emerald-100 p-4 rounded-2xl rounded-tl-sm shadow-sm border border-emerald-200 text-emerald-900 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
-                                    Pertanyaan yang sangat cerdas! Daun berwarna hijau karena memiliki pigmen bernama <b>Klorofil</b>. Klorofil ini menyerap sinar matahari berwarna merah dan biru, tapi "memantulkan" warna hijau ke mata kita. Fungsinya adalah untuk memasak makanan bagi tanaman yang disebut proses Fotosintesis! 🍃✨
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Chat 3 (Kanan - Siswa) -->
-                        <div class="flex items-start gap-3 flex-row-reverse group mt-6">
-                            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-pink-200">👧</div>
-                            <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold mr-1 mb-1 block text-right tracking-wide">Alya (Bandung) • 13:20</span>
-                                <div class="bg-white p-4 rounded-2xl rounded-tr-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed text-right group-hover:shadow-md transition-shadow">
-                                    Kalau bijinya terkurung di dalam kertas, apa nggak susah tumbuhnya Prof? Terus kertasnya akan jadi sampah lagi?
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Chat 4 (Kiri - Admin) -->
-                        <div class="flex items-start gap-3 group mt-2">
-                            <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-emerald-200">👨‍🔬</div>
-                            <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Profesor Grow • 13:45</span>
-                                <div class="bg-emerald-100 p-4 rounded-2xl rounded-tl-sm shadow-sm border border-emerald-200 text-emerald-900 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
-                                    Tidak susah, Alya! Kertas <i>Paper Grow</i> terbuat dari bubur kertas daur ulang tanpa bahan kimia keras. Saat dibasahi, kertasnya akan melunak. Dan hebatnya, kertas tersebut 100% <i>biodegradable</i> (dapat terurai oleh alam) sehingga lama-lama akan menyatu dengan tanah dan menjadi kompos yang menyuburkan akar tunasmu! 🌱
+                                    Halo, selamat datang di <b>Forum Sains Cilik!</b> 👋<br><br>Saya adalah Profesor Grow, asisten cerdas yang siap menjawab pertanyaanmu. Ada yang ingin kamu tanyakan seputar cara menanam Paper Grow, jenis bibit, atau ilmu botani lainnya? Ketik pertanyaanmu di bawah ya! 🌱✨
                                 </div>
                             </div>
                         </div>

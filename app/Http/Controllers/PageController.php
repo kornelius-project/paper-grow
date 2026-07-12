@@ -104,8 +104,10 @@ class PageController extends Controller
             ]
         ];
 
-        // Ambil data chat testimoni
-        $chats = \App\Models\CommunityChat::orderBy('id', 'desc')->take(20)->get();
+        // Ambil data chat testimoni khusus untuk user ini (berdasarkan session_id)
+        $sessionId = session()->getId();
+        $chats = \App\Models\CommunityChat::where('session_id', $sessionId)
+                    ->orderBy('id', 'desc')->take(20)->get();
 
         return view('edukasi.encyclopedia', compact('seeds', 'chats'));
     }
@@ -118,13 +120,15 @@ class PageController extends Controller
         ]);
 
         $userMessage = $request->message;
+        $sessionId = session()->getId();
 
         // 1. Simpan pesan user (Selalu di kanan, is_admin = false)
         \App\Models\CommunityChat::create([
             'name' => auth()->check() ? auth()->user()->name : 'Petani Cilik',
             'role' => auth()->check() ? (auth()->user()->is_admin ? 'Admin' : 'Siswa') : 'Siswa',
             'message' => $userMessage,
-            'is_admin' => false
+            'is_admin' => false,
+            'session_id' => $sessionId
         ]);
 
         // 2. Logika AI Auto-Responder Berbasis Kata Kunci
@@ -157,7 +161,8 @@ class PageController extends Controller
             'name' => 'Profesor Grow',
             'role' => 'AI Assistant',
             'message' => $botReply,
-            'is_admin' => true 
+            'is_admin' => true,
+            'session_id' => $sessionId
         ]);
 
         return redirect()->to(url()->previous() . '#chat-section')->with('success', 'Pertanyaan terkirim!');
