@@ -83,75 +83,79 @@
 
 
 <!-- Section Penjelasan: Apa itu Paper Grow? (Sisi Edukatif) -->
-<div class="py-20 max-w-6xl mx-auto px-4">
+<div class="py-24 max-w-6xl mx-auto px-6 lg:px-8">
     <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">Apa itu Paper Grow?</h2>
-        <div class="w-16 h-1 bg-green-500 mx-auto rounded-full"></div>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-5">Apa itu Paper Grow?</h2>
+        <div class="w-20 h-1.5 bg-emerald-500 mx-auto rounded-full opacity-80"></div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6 text-justify">
-            <p class="text-slate-600 leading-relaxed">
-                Di Indonesia, sampah padat khususnya limbah kertas merupakan tantangan ekologis yang sangat besar. Pada tahun 2023 saja, produksi limbah kertas mencapai sekitar 3,9 juta ton. Paper Grow hadir sebagai jawaban kreatif atas permasalahan tersebut melalui konsep ekonomi sirkular mengubah limbah kertas menjadi produk kertas benih siap tanam yang bernilai tinggi.
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div class="space-y-6 text-slate-600 leading-relaxed text-lg font-light">
+            <p>
+                Di Indonesia, sampah padat khususnya limbah kertas merupakan tantangan ekologis yang sangat besar. Pada tahun 2023 saja, produksi limbah kertas mencapai sekitar 3,9 juta ton. Paper Grow hadir sebagai jawaban kreatif atas permasalahan tersebut melalui konsep ekonomi sirkular—mengubah limbah kertas menjadi produk kertas benih siap tanam yang bernilai tinggi.
             </p>
-            <p class="text-slate-600 leading-relaxed">
+            <p>
                 Tidak sekadar kertas benih biasa, produk kami dirancang sebagai media ajar sains interaktif. Melalui kode QR yang tertanam di setiap kemasan dan terhubung ke sistem visualisasi 3D, siswa sekolah dasar dapat memindai kertas benih untuk memvisualisasikan model anatomi tanaman secara 3D dan mempelajari siklus hidupnya secara visual interaktif.
             </p>
         </div>
         
         <!-- Box Infografis Keunggulan Pendidikan -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-                <div class="text-2xl mb-2">📚</div>
-                <h4 class="font-bold text-slate-800 mb-1">Kurikulum Merdeka</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Sangat cocok untuk mendukung pembelajaran berbasis proyek (Project-Based Learning) dan materi sains dasar.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+            <div class="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div class="text-3xl mb-3">📚</div>
+                <h4 class="font-bold text-slate-800 mb-2">Kurikulum Merdeka</h4>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">Sangat cocok untuk mendukung pembelajaran berbasis proyek (Project-Based Learning) dan materi sains dasar.</p>
             </div>
-            <div class="p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-                <div class="text-2xl mb-2">♻️</div>
-                <h4 class="font-bold text-slate-800 mb-1">Daur Ulang Nyata</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Mengedukasi anak-anak mengenai penanganan limbah secara berkelanjutan sejak usia dini.</p>
+            <div class="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div class="text-3xl mb-3">♻️</div>
+                <h4 class="font-bold text-slate-800 mb-2">Daur Ulang Nyata</h4>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">Mengedukasi anak-anak mengenai penanganan limbah secara berkelanjutan sejak usia dini.</p>
             </div>
-            <div class="p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-                <div class="text-2xl mb-2">📱</div>
-                <h4 class="font-bold text-slate-800 mb-1">Teknologi AR Resmi</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Menggunakan teknologi WebAR yang dapat diakses langsung tanpa aplikasi tambahan oleh siswa dan guru di seluruh Indonesia.</p>
+            <div class="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div class="text-3xl mb-3">📱</div>
+                <h4 class="font-bold text-slate-800 mb-2">Teknologi AR Resmi</h4>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">Menggunakan teknologi WebAR yang dapat diakses langsung tanpa aplikasi tambahan oleh siswa dan guru.</p>
             </div>
-            <div class="p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-                <div class="text-2xl mb-2">🥬</div>
-                <h4 class="font-bold text-slate-800 mb-1">Tanaman Pangan</h4>
-                <p class="text-xs text-slate-500 leading-relaxed">Menggunakan bibit sayuran konsumsi harian (Bayam, Sawi, Selada) untuk memupuk jiwa urban farming.</p>
+            <div class="p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div class="text-3xl mb-3">🥬</div>
+                <h4 class="font-bold text-slate-800 mb-2">Tanaman Pangan</h4>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">Menggunakan bibit sayuran konsumsi harian (Bayam, Sawi, Selada) untuk memupuk jiwa urban farming.</p>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Section Demonstrasi AR (Edukasi Digital) -->
-<div class="py-20 bg-slate-900 text-white px-4 border-y border-emerald-900">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="py-24 bg-slate-900 text-white px-6 lg:px-8 border-y border-emerald-900/50">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <!-- Kolom Kiri: Penjelasan & Tombol -->
-        <div class="space-y-6">
-            <span class="text-xs font-bold text-emerald-400 bg-emerald-900/50 border border-emerald-700/50 px-3 py-1.5 rounded-full uppercase tracking-widest">
-                Pengalaman Augmented Reality
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">
-                Jelajahi Anatomi Tumbuhan dalam <span class="text-emerald-400">Dimensi 3D</span>
-            </h2>
-            <p class="text-slate-300 leading-relaxed text-justify">
-                Kami memahami bahwa proses biologis tanaman terkadang sulit diamati dengan mata telanjang. Melalui integrasi dengan teknologi <strong>WebAR Native</strong>, setiap produk Paper Grow dilengkapi dengan <i>marker</i> AR khusus. 
-            </p>
-            <p class="text-slate-300 leading-relaxed text-justify mb-8">
-                Cukup pindai kertas benih Anda menggunakan aplikasi ponsel, dan visualisasi 3D interaktif dari siklus hidup tanaman akan muncul langsung di atas meja Anda! Siswa dapat membedah struktur sel, melihat bagaimana akar menyerap air, hingga proses fotosintesis secara nyata.
-            </p>
+        <div class="space-y-8">
+            <div>
+                <span class="text-xs font-bold text-emerald-400 bg-emerald-900/50 border border-emerald-700/50 px-4 py-2 rounded-full uppercase tracking-widest shadow-sm inline-block mb-6">
+                    Pengalaman Augmented Reality
+                </span>
+                <h2 class="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
+                    Jelajahi Anatomi Tumbuhan dalam <span class="text-emerald-400">Dimensi 3D</span>
+                </h2>
+                <div class="space-y-5 text-slate-300 leading-relaxed text-lg font-light">
+                    <p>
+                        Kami memahami bahwa proses biologis tanaman terkadang sulit diamati dengan mata telanjang. Melalui integrasi dengan teknologi <strong class="text-white font-medium">WebAR Native</strong>, setiap produk Paper Grow dilengkapi dengan <i>marker</i> AR khusus. 
+                    </p>
+                    <p>
+                        Cukup pindai kertas benih Anda menggunakan aplikasi ponsel, dan visualisasi 3D interaktif dari siklus hidup tanaman akan muncul langsung di atas meja Anda! Siswa dapat membedah struktur sel, melihat bagaimana akar menyerap air, hingga proses fotosintesis secara nyata.
+                    </p>
+                </div>
+            </div>
             
-            <a href="{{ route('ar.guide') }}" class="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-slate-900 font-bold px-8 py-4 rounded-xl shadow-lg shadow-emerald-500/20 transition-all duration-200">
-                <span>📱</span> Lihat Panduan AR
+            <a href="{{ route('ar.guide') }}" class="inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold px-8 py-4 rounded-xl shadow-lg shadow-emerald-500/20 transition-all duration-300 hover:-translate-y-1">
+                <span class="text-xl">📱</span> Lihat Panduan AR
             </a>
         </div>
         
         <!-- Kolom Kanan: Embed 3D/AR Web App -->
-        <div class="relative group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-green-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-            <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-800 border border-slate-700 w-full h-[450px] md:h-[500px] lg:h-[550px]">
+        <div class="relative group w-full">
+            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-green-400 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-300"></div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-800 border border-slate-700 w-full h-[450px] md:h-[550px]">
                 <iframe 
                     class="w-full h-full"
                     src="https://papergrow-tomat.vercel.app/" 
@@ -166,17 +170,17 @@
 </div>
 
 <!-- Section Simulasi Animasi Menanam Interaktif (Edukasi Modern) -->
-<div id="simulasi-tanam" class="bg-gradient-to-b from-slate-50 to-emerald-50/40 py-20 px-4 border-y border-slate-100 relative overflow-hidden">
+<div id="simulasi-tanam" class="bg-gradient-to-b from-slate-50 to-emerald-50/40 py-24 px-4 border-b border-slate-100 relative overflow-hidden">
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-green-100/50 blur-[100px] rounded-full pointer-events-none"></div>
     <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-emerald-100/40 blur-[100px] rounded-full pointer-events-none"></div>
     
     <div class="max-w-7xl mx-auto relative z-10">
         <div class="text-center mb-16">
-            <span class="text-xs font-bold text-emerald-700 bg-emerald-100/80 px-5 py-2 rounded-full uppercase tracking-widest border border-emerald-200 shadow-sm inline-flex items-center gap-2">
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-100/80 px-5 py-2.5 rounded-full uppercase tracking-widest border border-emerald-200 shadow-sm inline-flex items-center gap-2 mb-6">
                 <span class="text-base">🧑‍🔬</span> Kelas Sains Interaktif
             </span>
-            <h2 class="text-3xl md:text-5xl font-black text-slate-900 mt-5 mb-4">Cara Menanam <span class="text-emerald-600">Paper Grow</span></h2>
-            <p class="text-slate-500 text-base md:text-lg font-light max-w-2xl mx-auto">Ternyata menanam sayuran itu sangat mudah! Mari kita pelajari 7 tahapan proses tumbuhnya tunas ajaib dari selembar kertas daur ulang.</p>
+            <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-6">Cara Menanam <span class="text-emerald-600">Paper Grow</span></h2>
+            <p class="text-slate-500 text-lg font-light max-w-2xl mx-auto leading-relaxed">Ternyata menanam sayuran itu sangat mudah! Mari kita pelajari 7 tahapan proses tumbuhnya tunas ajaib dari selembar kertas daur ulang.</p>
         </div>
 
         <div class="relative group/slider px-2 md:px-12">
@@ -202,13 +206,13 @@
                 @endphp
 
                 @foreach($steps as $index => $step)
-                <div class="min-w-[260px] md:min-w-[340px] w-[260px] md:w-[340px] bg-white rounded-3xl p-5 shadow-[0_4px_20px_rgb(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgb(16,185,129,0.15)] border-2 border-slate-50 hover:border-emerald-100 snap-center shrink-0 group transition-all duration-300 hover:-translate-y-3 select-none relative overflow-hidden">
+                <div class="min-w-[280px] md:min-w-[340px] w-[280px] md:w-[340px] bg-white rounded-3xl p-6 shadow-[0_4px_20px_rgb(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgb(16,185,129,0.15)] border border-slate-100 hover:border-emerald-200 snap-center shrink-0 group transition-all duration-300 hover:-translate-y-3 select-none relative overflow-hidden">
                     
                     <!-- Latar Belakang Kartu (Glow) saat di-hover -->
                     <div class="absolute inset-0 bg-gradient-to-br from-emerald-50/0 to-green-50/0 group-hover:from-emerald-50/40 group-hover:to-green-100/40 transition-colors duration-500 z-0 pointer-events-none"></div>
                     
                     <!-- Gambar Simulasi -->
-                    <div class="overflow-hidden rounded-2xl mb-5 aspect-[5/4] relative bg-slate-50 border border-slate-100 shadow-inner pointer-events-none z-10">
+                    <div class="overflow-hidden rounded-2xl mb-6 aspect-[5/4] relative bg-slate-50 border border-slate-100 shadow-inner pointer-events-none z-10">
                         <img src="{{ asset('images/step' . ($index + 1) . '.jpeg') }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Langkah {{ $index + 1 }}">
                         
                         <!-- Lencana Tahap Angka Besar -->
@@ -219,18 +223,18 @@
                     
                     <div class="relative z-10">
                         <!-- Edukasi Tag -->
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-lg">{{ $step['icon'] }}</span>
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-slate-100/80 px-2 py-1 rounded-md">{{ $step['tag'] }}</span>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-2xl">{{ $step['icon'] }}</span>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest bg-slate-100/80 px-3 py-1.5 rounded-lg">{{ $step['tag'] }}</span>
                         </div>
                         
                         <!-- Konten Edukasi -->
-                        <h3 class="text-xl font-black text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">{{ $step['title'] }}</h3>
-                        <p class="text-sm text-slate-500 leading-relaxed font-normal">{{ $step['desc'] }}</p>
+                        <h3 class="text-xl font-black text-slate-800 mb-3 group-hover:text-emerald-600 transition-colors">{{ $step['title'] }}</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">{{ $step['desc'] }}</p>
                     </div>
                     
                     <!-- Ornamen garis -->
-                    <div class="absolute bottom-0 left-10 right-10 h-1 bg-emerald-100 rounded-t-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    <div class="absolute bottom-0 left-10 right-10 h-1.5 bg-emerald-400 rounded-t-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </div>
                 @endforeach
                 
@@ -243,9 +247,9 @@
             
         </div>
         
-        <div class="text-center mt-2 pb-8">
-            <p class="text-xs text-emerald-600/80 font-medium bg-emerald-50/50 backdrop-blur-sm inline-flex items-center gap-2 px-5 py-2.5 rounded-full shadow-sm border border-emerald-100/50">
-                <svg class="w-4 h-4 animate-bounce-x" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+        <div class="text-center mt-4 pb-8">
+            <p class="text-sm text-emerald-700/80 font-medium bg-emerald-50/80 backdrop-blur-sm inline-flex items-center gap-3 px-6 py-3 rounded-full shadow-sm border border-emerald-100/50">
+                <svg class="w-5 h-5 animate-bounce-x" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
                 <span>Geser ke samping untuk mengikuti eksperimen botani ini!</span>
             </p>
         </div>
@@ -255,7 +259,7 @@
 <style>
     @keyframes bounce-x {
         0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(3px); }
+        50% { transform: translateX(5px); }
     }
     .animate-bounce-x {
         animation: bounce-x 2s infinite;
@@ -301,67 +305,62 @@
         });
     });
 </script>
-<!-- Section Statistik / Social Proof (Pindah ke Bawah) -->
-<div class="bg-white pt-24 pb-12 relative z-20 border-t border-slate-100">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+
+<!-- Section Statistik / Social Proof -->
+<div class="bg-white py-20 relative z-20 border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
             <!-- Stat 1: Sekolah Mitra -->
-            <div class="py-4 md:py-0 transform hover:-translate-y-1 transition-transform duration-300">
-                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $schoolCount }}+</div>
-                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Sekolah Mitra</div>
-                <p class="text-xs text-slate-500 mt-1">Telah mendaftar edukasi</p>
+            <div class="py-6 md:py-0 transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-5xl lg:text-6xl font-black text-emerald-600 mb-4">{{ $schoolCount }}+</div>
+                <div class="text-sm font-bold text-slate-800 uppercase tracking-widest mb-2">Sekolah Mitra</div>
+                <p class="text-sm text-slate-500 font-light">Telah mendaftar program edukasi lingkungan.</p>
             </div>
             <!-- Stat 2: Pesanan Selesai -->
-            <div class="py-4 md:py-0 transform hover:-translate-y-1 transition-transform duration-300">
-                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $orderCount }}+</div>
-                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Paket Terjual</div>
-                <p class="text-xs text-slate-500 mt-1">Kertas benih & modul ajar</p>
+            <div class="py-6 md:py-0 transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-5xl lg:text-6xl font-black text-emerald-600 mb-4">{{ $orderCount }}+</div>
+                <div class="text-sm font-bold text-slate-800 uppercase tracking-widest mb-2">Paket Terjual</div>
+                <p class="text-sm text-slate-500 font-light">Kertas benih & modul ajar telah digunakan.</p>
             </div>
             <!-- Stat 3: Kota Jangkauan -->
-            <div class="py-4 md:py-0 transform hover:-translate-y-1 transition-transform duration-300">
-                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $cityCount }}+</div>
-                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Kota Terjangkau</div>
-                <p class="text-xs text-slate-500 mt-1">Telah dikirim ke berbagai kota</p>
+            <div class="py-6 md:py-0 transform hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-5xl lg:text-6xl font-black text-emerald-600 mb-4">{{ $cityCount }}+</div>
+                <div class="text-sm font-bold text-slate-800 uppercase tracking-widest mb-2">Kota Terjangkau</div>
+                <p class="text-sm text-slate-500 font-light">Kami mengirim ke seluruh penjuru Indonesia.</p>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Section Capaian Edukasi (Nilai Jual Akademis B2B) -->
-<div class="py-20 bg-white px-4">
+<div class="py-24 bg-slate-50/50 px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <span class="text-xs font-bold text-green-700 bg-green-50 border border-green-200/60 px-3 py-1.5 rounded-full uppercase tracking-widest">
+        <div class="text-center mb-20">
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-100/60 border border-emerald-200/60 px-5 py-2.5 rounded-full uppercase tracking-widest inline-block mb-6 shadow-sm">
                 Integrasi Akademis
             </span>
-            <h2 class="text-3xl font-black text-slate-900 mt-3 mb-2">Mendukung Capaian Pembelajaran Siswa</h2>
-            <p class="text-slate-500 text-sm font-light max-w-md mx-auto">Bagaimana Paper Grow membantu guru mengimplementasikan metode belajar berbasis proyek sesuai Kurikulum Merdeka.</p>
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-6">Mendukung Capaian Pembelajaran Siswa</h2>
+            <p class="text-slate-500 text-lg font-light max-w-2xl mx-auto leading-relaxed">Bagaimana Paper Grow membantu pendidik mengimplementasikan metode belajar berbasis proyek sesuai Kurikulum Merdeka.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
             <!-- Capaian 1 -->
-            <div class="p-6 rounded-2xl bg-slate-50/50 border border-slate-100 flex gap-4">
-                <div class="text-3xl">🌱</div>
-                <div>
-                    <h4 class="font-bold text-slate-800 text-base mb-1">Eksperimen Sains Riil</h4>
-                    <p class="text-xs text-slate-500 leading-relaxed font-light">Siswa belajar mengamati pertumbuhan vegetatif secara nyata, mengukur kelembapan tanah, dan melatih keterampilan observasi biologi dasar.</p>
-                </div>
+            <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                <div class="text-4xl mb-6 transform group-hover:scale-110 transition-transform origin-left">🌱</div>
+                <h4 class="font-bold text-slate-900 text-xl mb-3">Eksperimen Sains Riil</h4>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">Siswa belajar mengamati pertumbuhan vegetatif secara nyata, mengukur kelembapan tanah, dan melatih keterampilan observasi biologi dasar secara mandiri.</p>
             </div>
             <!-- Capaian 2 -->
-            <div class="p-6 rounded-2xl bg-slate-50/50 border border-slate-100 flex gap-4">
-                <div class="text-3xl">🧩</div>
-                <div>
-                    <h4 class="font-bold text-slate-800 text-base mb-1">Kontekstual 3D Abstrak</h4>
-                    <p class="text-xs text-slate-500 leading-relaxed font-light">Teknologi Augmented Reality cerdas membantu siswa memvisualisasikan konsep abstrak seperti struktur jaringan akar dalam bentuk 3D interaktif.</p>
-                </div>
+            <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                <div class="text-4xl mb-6 transform group-hover:scale-110 transition-transform origin-left">🧩</div>
+                <h4 class="font-bold text-slate-900 text-xl mb-3">Kontekstual 3D Abstrak</h4>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">Teknologi Augmented Reality cerdas membantu siswa memvisualisasikan konsep abstrak seperti struktur jaringan dan sel dalam bentuk 3D interaktif.</p>
             </div>
             <!-- Capaian 3 -->
-            <div class="p-6 rounded-2xl bg-slate-50/50 border border-slate-100 flex gap-4">
-                <div class="text-3xl">🌍</div>
-                <div>
-                    <h4 class="font-bold text-slate-800 text-base mb-1">Kecerdasan Ekologis</h4>
-                    <p class="text-xs text-slate-500 leading-relaxed font-light">Membangun rasa tanggung jawab (ownership) terhadap lingkungan sejak dini melalui aksi nyata daur ulang sirkular ekonomi.</p>
-                </div>
+            <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                <div class="text-4xl mb-6 transform group-hover:scale-110 transition-transform origin-left">🌍</div>
+                <h4 class="font-bold text-slate-900 text-xl mb-3">Kecerdasan Ekologis</h4>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">Membangun rasa tanggung jawab (ownership) terhadap kelestarian lingkungan sejak dini melalui praktik nyata daur ulang dan ekonomi sirkular.</p>
             </div>
         </div>
     </div>
