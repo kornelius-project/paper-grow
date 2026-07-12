@@ -42,10 +42,28 @@
                         <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-100/50 to-green-50/50 rounded-bl-[100px] -z-10 transition-transform duration-500 group-hover:scale-110"></div>
 
                         <div>
-                            <div class="flex items-start justify-between mb-8 relative z-10">
-                                <div class="w-20 h-20 bg-gradient-to-br from-emerald-100 to-green-50 rounded-2xl flex items-center justify-center text-5xl group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 shadow-inner border border-white">
-                                    {{ $seed['icon'] }}
+                            <!-- Slot Gambar (Otomatis muncul jika file tersedia) -->
+                            @if(isset($seed['image_slot']))
+                                <div class="w-full h-48 mb-6 rounded-2xl overflow-hidden relative z-10 shadow-sm border border-slate-100 group-hover:shadow-md transition-shadow bg-slate-50">
+                                    <img src="{{ asset('images/' . $seed['image_slot']) }}" 
+                                         alt="{{ $seed['name'] }}" 
+                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                                    >
+                                    <!-- Ikon Fallback (Muncul jika gambar belum diupload) -->
+                                    <div class="hidden w-full h-full bg-gradient-to-br from-emerald-100 to-green-50 items-center justify-center text-6xl">
+                                        {{ $seed['icon'] }}
+                                    </div>
                                 </div>
+                            @else
+                                <div class="flex items-start justify-between mb-8 relative z-10">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-emerald-100 to-green-50 rounded-2xl flex items-center justify-center text-5xl group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500 shadow-inner border border-white">
+                                        {{ $seed['icon'] }}
+                                    </div>
+                                </div>
+                            @endif
+
+                            <div class="flex items-start justify-between mb-4 relative z-10">
                                 <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm">
                                     Bibit Edukasi
                                 </span>

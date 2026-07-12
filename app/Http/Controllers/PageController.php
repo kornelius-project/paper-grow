@@ -64,7 +64,8 @@ class PageController extends Controller
                 'water' => 'Sedang (1x Sehari)',
                 'sunlight' => 'Penuh',
                 'fact' => 'Bayam sangat kaya akan zat besi dan vitamin K. Akar bayam juga membantu menggemburkan tanah.',
-                'product_url' => route('products.index')
+                'product_url' => route('products.index'),
+                'image_slot' => 'bayam.jpeg'
             ],
             [
                 'name' => 'Sawi Caisim',
@@ -73,7 +74,8 @@ class PageController extends Controller
                 'water' => 'Tinggi (2x Sehari)',
                 'sunlight' => 'Parsial - Penuh',
                 'fact' => 'Sawi sangat cepat panen (hanya ~30 hari) sehingga sangat cocok untuk edukasi kesabaran dan proses biologis anak.',
-                'product_url' => route('products.index')
+                'product_url' => route('products.index'),
+                'image_slot' => 'sawi.jpeg'
             ],
             [
                 'name' => 'Selada Air',
@@ -82,7 +84,8 @@ class PageController extends Controller
                 'water' => 'Tinggi (Selalu Lembap)',
                 'sunlight' => 'Parsial',
                 'fact' => 'Selada memiliki daun yang sangat sensitif terhadap panas. Tanaman ini bagus untuk percobaan hidroponik sederhana.',
-                'product_url' => route('products.index')
+                'product_url' => route('products.index'),
+                'image_slot' => 'selada.jpeg'
             ],
             [
                 'name' => 'Bunga Zinnia',
@@ -91,16 +94,18 @@ class PageController extends Controller
                 'water' => 'Sedang (1x Sehari)',
                 'sunlight' => 'Penuh',
                 'fact' => 'Bunga Zinnia sangat disukai oleh kupu-kupu dan lebah, sehingga sangat baik untuk edukasi ekosistem polinator (SDG 15).',
-                'product_url' => route('products.index')
+                'product_url' => route('products.index'),
+                'image_slot' => 'zinnia.jpeg' // Asumsi akan ada gambar zinnia
             ],
             [
-                'name' => 'Bunga Bougainvillea',
-                'icon' => '🌺',
-                'germination' => '14 - 21 Hari',
-                'water' => 'Rendah (Tahan Kering)',
-                'sunlight' => 'Penuh (Panas)',
-                'fact' => 'Tanaman ini sangat adaptif di cuaca ekstrem. Bunganya yang cerah sebenarnya adalah daun yang bermodifikasi (braktea).',
-                'product_url' => route('products.index')
+                'name' => 'Tomat',
+                'icon' => '🍅',
+                'germination' => '5 - 10 Hari',
+                'water' => 'Sedang (1x Sehari)',
+                'sunlight' => 'Penuh',
+                'fact' => 'Tomat kaya akan Vitamin C dan likopen. Buahnya secara botani adalah beri, yang berarti ia tergolong buah-buahan, bukan sayuran!',
+                'product_url' => route('products.index'),
+                'image_slot' => 'tomat.jpeg' // Slot untuk gambar
             ]
         ];
 
