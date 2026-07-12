@@ -17,6 +17,14 @@ Route::get('/panduan-ar', function () {
 Route::get('/edukasi/ensiklopedia', [PageController::class, 'encyclopedia'])->name('edukasi.encyclopedia');
 Route::post('/edukasi/ensiklopedia/chat', [PageController::class, 'storeChat'])->middleware('auth')->name('edukasi.chat.store');
 
+Route::get('/fix-tomat', function () {
+    \App\Models\Product::where('name', 'like', '%Tomat%')->update([
+        'image' => 'tomat.jpeg',
+        'seed_type' => 'Tomat'
+    ]);
+    return redirect()->route('products.index')->with('success', 'Gambar Tomat Berhasil Diperbarui!');
+});
+
 // ==========================================
 // RUTE AUTENTIKASI (LOGIN & REGISTER)
 // ==========================================
