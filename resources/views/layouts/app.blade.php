@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Tailwind Play CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -26,23 +30,29 @@
 <body class="flex flex-col min-h-screen selection:bg-emerald-200 selection:text-emerald-900">
 
     <!-- Navbar / Header Website Modern -->
-    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-slate-100 px-6 py-4 flex justify-between items-center transition-all duration-300">
+    <nav x-data="{ mobileMenuOpen: false }" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 flex items-center justify-between px-4 sm:px-8 py-3 shadow-sm">
         
         <!-- Bagian Logo Kiri Modern & Sleek -->
         <a href="{{ route('home') }}" class="group flex items-center gap-3 active:scale-95 transition-transform duration-150">
             <div class="group-hover:rotate-6 transition-transform duration-300">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo Paper Grow" class="h-12 w-auto object-contain drop-shadow-sm">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo Paper Grow" class="h-10 sm:h-12 w-auto object-contain drop-shadow-sm">
             </div>
             <div class="flex flex-col justify-center">
-                <span class="text-[22px] font-black text-[#1E352F] tracking-tight leading-none">Paper<span class="text-emerald-500 font-light">Grow</span></span>
-                <span class="text-[8px] font-bold text-emerald-600/80 tracking-[0.2em] uppercase mt-1">
+                <span class="text-[18px] sm:text-[22px] font-black text-[#1E352F] tracking-tight leading-none">Paper<span class="text-emerald-500 font-light">Grow</span></span>
+                <span class="text-[7px] sm:text-[8px] font-bold text-emerald-600/80 tracking-[0.2em] uppercase mt-1">
                     Green Edutech Platform
                 </span>
             </div>
         </a>
         
-        <!-- Bagian Menu Kanan Dinamis (Termasuk Panduan AR) -->
-        <div class="space-x-1 sm:space-x-4 flex items-center relative">
+        <!-- Hamburger Button Khusus Mobile -->
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-slate-600 hover:text-emerald-600 transition-colors bg-slate-50 rounded-lg">
+            <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg x-show="mobileMenuOpen" class="w-6 h-6" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+        <!-- Bagian Menu Kanan Dinamis (Desktop Saja) -->
+        <div class="hidden md:flex space-x-1 sm:space-x-4 items-center relative">
             <a href="{{ route('home') }}" 
                class="px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 {{ Request::is('/') ? 'bg-green-50 text-green-700' : 'text-slate-600 hover:text-green-600 hover:bg-slate-50' }}">
                 Beranda
@@ -133,6 +143,49 @@
                 <div class="flex items-center gap-2">
                     <a href="{{ route('login') }}" class="hidden sm:inline-block px-4 py-2 text-sm font-bold text-slate-600 hover:text-emerald-600 transition-colors">Masuk</a>
                     <a href="{{ route('register') }}" class="px-4 py-2 text-sm font-bold bg-[#1E352F] text-white rounded-lg hover:bg-emerald-600 transition-colors shadow-sm shadow-emerald-500/20 whitespace-nowrap">Daftar</a>
+                </div>
+            @endauth
+        </div>
+
+        <!-- Menu Dropdown Mobile (Muncul saat hamburger diklik) -->
+        <div x-show="mobileMenuOpen" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-2"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-2"
+             style="display: none;"
+             class="absolute top-full left-0 right-0 bg-white border-b border-slate-100 shadow-xl px-4 py-4 md:hidden flex flex-col gap-2 z-50">
+            
+            <a href="{{ route('home') }}" class="px-4 py-3 rounded-xl font-bold {{ Request::is('/') ? 'bg-green-50 text-green-700' : 'text-slate-600' }}">Beranda</a>
+            <a href="{{ route('products.index') }}" class="px-4 py-3 rounded-xl font-bold {{ Request::is('products*') ? 'bg-green-50 text-green-700' : 'text-slate-600' }}">Toko / Produk</a>
+            <a href="{{ route('edukasi.encyclopedia') }}" class="px-4 py-3 rounded-xl font-bold {{ Request::is('edukasi*') ? 'bg-green-50 text-green-700' : 'text-slate-600' }}">🌱 Edukasi Ensiklopedia</a>
+            <a href="{{ route('ar.guide') }}" class="px-4 py-3 rounded-xl font-bold {{ Request::is('panduan-ar') ? 'bg-green-50 text-green-700' : 'text-slate-600' }}">📱 Panduan AR</a>
+            <a href="{{ route('partnership.index') }}" class="px-4 py-3 rounded-xl font-bold {{ Request::is('kemitraan-sekolah') ? 'bg-green-50 text-green-700' : 'text-slate-600' }}">Growth (B2B)</a>
+            <a href="/about" class="px-4 py-3 rounded-xl font-bold {{ Request::is('about') ? 'bg-green-50 text-green-700' : 'text-slate-600' }}">Tentang Kami</a>
+
+            <div class="h-px bg-slate-100 my-2"></div>
+
+            @auth
+                <a href="{{ route('cart.index') }}" class="px-4 py-3 rounded-xl font-bold text-slate-600 flex items-center gap-2">
+                    🛒 Keranjang Saya 
+                    @if($cartCount > 0)
+                        <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full">{{ $cartCount }}</span>
+                    @endif
+                </a>
+                <a href="{{ route('profile.index') }}" class="px-4 py-3 rounded-xl font-bold text-slate-600">👤 Profil Saya</a>
+                @if(auth()->user()->is_admin)
+                    <a href="{{ route('admin.dashboard') }}" class="px-4 py-3 rounded-xl font-bold text-slate-600">⚙️ Ruang Admin</a>
+                @endif
+                <form method="POST" action="{{ route('logout') }}" class="mt-2">
+                    @csrf
+                    <button type="submit" class="w-full text-left px-4 py-3 rounded-xl font-bold text-red-500 bg-red-50">🚪 Log Out</button>
+                </form>
+            @else
+                <div class="grid grid-cols-2 gap-2 mt-2">
+                    <a href="{{ route('login') }}" class="text-center px-4 py-3 rounded-xl font-bold bg-slate-50 text-slate-700">Masuk</a>
+                    <a href="{{ route('register') }}" class="text-center px-4 py-3 rounded-xl font-bold bg-[#1E352F] text-white">Daftar</a>
                 </div>
             @endauth
         </div>

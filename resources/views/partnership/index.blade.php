@@ -92,9 +92,18 @@
             <!-- Panel Kanan (Formulir) -->
             <div class="p-10 md:w-3/5">
                 @if(session('success'))
-                    <div class="bg-emerald-50 border border-emerald-200 text-emerald-700 px-4 py-3 rounded-xl mb-6 text-sm font-medium flex items-center gap-2">
-                        <span>✅</span> {{ session('success') }}
-                    </div>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            Swal.fire({
+                                title: 'Proposal Terkirim!',
+                                text: '{{ session('success') }}',
+                                icon: 'success',
+                                confirmButtonText: 'Luar Biasa',
+                                confirmButtonColor: '#10b981',
+                                backdrop: `rgba(16, 185, 129, 0.2)`
+                            });
+                        });
+                    </script>
                 @endif
 
                 <form action="{{ route('partnership.store') }}" method="POST" class="space-y-5">

@@ -210,7 +210,15 @@
 
                 @auth
                 <!-- Chat Input Real Form -->
-                <form action="{{ route('edukasi.chat.store') }}" method="POST" class="bg-white p-4 border-t border-slate-100 flex gap-3 items-center shadow-[0_-5px_15px_rgba(0,0,0,0.02)] relative z-10">
+                <form action="{{ route('edukasi.chat.store') }}" method="POST" 
+                      onsubmit="
+                        const btn = this.querySelector('button[type=submit]');
+                        btn.innerHTML = '<span class=\'animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full block\'></span>';
+                        btn.classList.add('opacity-70', 'cursor-not-allowed');
+                        this.querySelector('input').readOnly = true;
+                        this.querySelector('input').placeholder = 'AI sedang berpikir...';
+                      "
+                      class="bg-white p-4 border-t border-slate-100 flex gap-3 items-center shadow-[0_-5px_15px_rgba(0,0,0,0.02)] relative z-10">
                     @csrf
                     <input type="text" name="message" required placeholder="Tanyakan hal ilmiah seputar botani di sini..." class="flex-1 bg-slate-50 rounded-full px-5 py-3 text-sm text-slate-700 border border-slate-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all">
                     <button type="submit" class="bg-emerald-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-emerald-600 hover:scale-105 transition-all shadow-md shrink-0">
@@ -218,9 +226,17 @@
                     </button>
                 </form>
                 @else
-                <div class="bg-white p-6 border-t border-slate-100 flex flex-col items-center justify-center text-center shadow-[0_-5px_15px_rgba(0,0,0,0.02)] relative z-10">
-                    <p class="text-slate-500 mb-3 text-sm">Untuk bertanya kepada Profesor Grow, silakan masuk ke akun Anda terlebih dahulu.</p>
-                    <a href="{{ route('login') }}" class="px-6 py-2 bg-emerald-500 text-white text-sm font-bold rounded-full hover:bg-emerald-600 transition-colors shadow-sm">Masuk Akun</a>
+                <!-- Chat Input Dummy / Locked -->
+                <div class="bg-white p-4 border-t border-slate-100 flex gap-3 items-center shadow-[0_-5px_15px_rgba(0,0,0,0.02)] relative z-10">
+                    <div class="flex-1 relative">
+                        <input type="text" disabled placeholder="🔐 Silakan masuk untuk bertanya ke AI..." class="w-full bg-slate-100 rounded-full px-5 py-3 text-sm text-slate-500 border border-slate-200 cursor-not-allowed opacity-80">
+                        <a href="{{ route('login') }}" class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-slate-800 text-white text-xs font-bold rounded-full hover:bg-slate-700 transition-colors shadow-sm">
+                            Masuk Akun
+                        </a>
+                    </div>
+                    <button disabled class="bg-slate-300 text-white w-12 h-12 rounded-full flex items-center justify-center cursor-not-allowed shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                    </button>
                 </div>
                 @endauth
                 <div class="px-4 py-2 bg-slate-50 text-center border-t border-slate-100 rounded-b-[2rem]">

@@ -60,10 +60,19 @@
                 @else
                     <!-- Peringatan Login (Jika belum login) -->
                     <div class="text-center">
-                        <a href="{{ route('login') }}" class="block w-full bg-slate-800 hover:bg-slate-900 text-white font-black py-4 rounded-2xl text-lg shadow-xl shadow-slate-800/20 transition-all duration-300 transform hover:-translate-y-1 text-center mb-3">
-                            🔒 Masuk untuk Membeli
-                        </a>
-                        <p class="text-xs font-bold text-slate-500">Anda harus mendaftar/masuk terlebih dahulu.</p>
+                        <button type="button" onclick="Swal.fire({
+                            title: 'Ops! Simpan Dulu',
+                            text: 'Silakan masuk ke akun Anda terlebih dahulu untuk menyimpan {{ addslashes($product->name) }} ke dalam keranjang.',
+                            icon: 'info',
+                            showCancelButton: true,
+                            confirmButtonText: 'Masuk Akun',
+                            cancelButtonText: 'Batal',
+                            confirmButtonColor: '#10b981',
+                            cancelButtonColor: '#64748b'
+                        }).then((result) => { if(result.isConfirmed) window.location.href='{{ route('login') }}' })" 
+                        class="block w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-black py-4 rounded-2xl text-lg shadow-xl shadow-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1 text-center mb-3">
+                            🛒 Tambah ke Keranjang
+                        </button>
                     </div>
                 @endauth
             </div>
