@@ -17,7 +17,10 @@ class CartController extends Controller
             return $item->quantity * $item->product->price;
         });
 
-        return view('cart.index', compact('carts', 'subtotal'));
+        $tax = $subtotal * 0.12; // PPN 12%
+        $total = $subtotal + $tax;
+
+        return view('cart.index', compact('carts', 'subtotal', 'tax', 'total'));
     }
 
     // Tambah ke keranjang

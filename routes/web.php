@@ -58,6 +58,12 @@ Route::middleware('auth')->group(function () {
 });
 
 // ==========================================
+// RUTE WEBHOOK MIDTRANS (DILUAR AUTH)
+// ==========================================
+use App\Http\Controllers\PaymentCallbackController;
+Route::post('/midtrans/callback', [PaymentCallbackController::class, 'receive']);
+
+// ==========================================
 // RUTE DASHBOARD ADMIN (DILINDUNGI AUTH & IS_ADMIN)
 // ==========================================
 use App\Http\Controllers\AdminController;

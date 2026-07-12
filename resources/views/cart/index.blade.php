@@ -59,6 +59,10 @@
                     <span class="text-slate-500 font-medium text-sm">Total Harga ({{ $carts->sum('quantity') }} barang)</span>
                     <span class="text-slate-800 font-bold text-sm">Rp {{ number_format($subtotal, 0, ',', '.') }}</span>
                 </div>
+                <div class="flex justify-between items-center mb-3">
+                    <span class="text-slate-500 font-medium text-sm">Pajak (PPN 12%)</span>
+                    <span class="text-slate-800 font-bold text-sm">Rp {{ number_format($tax, 0, ',', '.') }}</span>
+                </div>
                 <div class="flex justify-between items-center mb-6">
                     <span class="text-slate-500 font-medium text-sm">Biaya Pengiriman</span>
                     <span class="text-emerald-600 font-bold text-sm">Gratis</span>
@@ -66,7 +70,7 @@
                 
                 <div class="flex justify-between items-center border-t border-slate-100 pt-4 mb-6">
                     <span class="font-bold text-slate-800">Total Tagihan</span>
-                    <span class="font-black text-2xl text-[#1E352F]">Rp {{ number_format($subtotal, 0, ',', '.') }}</span>
+                    <span class="font-black text-2xl text-[#1E352F]">Rp {{ number_format($total, 0, ',', '.') }}</span>
                 </div>
 
                 <form action="{{ route('order.checkout') }}" method="POST">

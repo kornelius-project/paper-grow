@@ -20,15 +20,20 @@ class OrderController extends Controller
             return redirect()->route('products.index')->withErrors(['cart' => 'Keranjang Anda kosong!']);
         }
 
-        $totalPrice = $carts->sum(function($item) {
+        $subtotal = $carts->sum(function($item) {
             return $item->quantity * $item->product->price;
         });
+
+        $tax = $subtotal * 0.12; // PPN 12%
+        $totalPrice = $subtotal + $tax;
 
         DB::beginTransaction();
         try {
             // 1. Buat Data Pesanan (Order)
             $order = Order::create([
                 'user_id' => $userId,
+                'subtotal' => $subtotal,
+                'tax_amount' => $tax,
                 'total_price' => $totalPrice,
                 'status' => 'pending', // Menunggu Pembayaran
             ]);
@@ -43,7 +48,28 @@ class OrderController extends Controller
                 ]);
             }
 
-            // 3. Kosongkan Keranjang
+            // 3. Konfigurasi Midtrans
+            \Midtrans\Config::$serverKey = config('services.midtrans.server_key');
+            \Midtrans\Config::$isProduction = config('services.midtrans.is_production');
+            \Midtrans\Config::$isSanitized = true;
+            \Midtrans\Config::$is3ds = true;
+
+            $params = [
+                'transaction_details' => [
+                    'order_id' => 'PG-' . $order->id . '-' . time(),
+                    'gross_amount' => $totalPrice,
+                ],
+                'customer_details' => [
+                    'first_name' => auth()->user()->name,
+                    'email' => auth()->user()->email,
+                ],
+            ];
+
+            // 4. Generate Snap Token
+            $snapToken = \Midtrans\Snap::getSnapToken($params);
+            $order->update(['snap_token' => $snapToken]);
+
+            // 5. Kosongkan Keranjang
             Cart::where('user_id', $userId)->delete();
 
             DB::commit();
