@@ -130,20 +130,26 @@ class PageController extends Controller
         // 2. Logika AI Auto-Responder Berbasis Kata Kunci
         $lowerMessage = strtolower($userMessage);
         
-        $botReply = "Wah, pertanyaan yang bagus! Sayangnya Profesor Grow saat ini hanya difokuskan untuk menjawab seputar cara menanam, biji, dan informasi mengenai produk Paper Grow. Coba tanyakan hal lain seputar itu ya! 🌱";
+        $botReply = "Wah, pertanyaan yang menarik! Tapi mohon maaf ya, Profesor Grow adalah **sistem AI otomatis** yang pengetahuannya terbatas. Profesor hanya bisa menjawab pertanyaan seputar **produk Paper Grow, cara menanam, bibit yang kami gunakan**, dan **fakta botani dasar**. Coba tanyakan hal-hal tersebut! 🌱";
 
-        if (str_contains($lowerMessage, 'tumbuh') || str_contains($lowerMessage, 'lama') || str_contains($lowerMessage, 'waktu')) {
-            $botReply = "Biasanya benih dari Paper Grow akan mulai berkecambah (tumbuh) dalam waktu 3 hingga 7 hari, tergantung dari jenis benihnya. Pastikan tanahnya selalu lembap ya! ⏱️🌱";
-        } elseif (str_contains($lowerMessage, 'tanam') || str_contains($lowerMessage, 'cara') || str_contains($lowerMessage, 'biji')) {
-            $botReply = "Cara menanamnya sangat mudah! Robek kertas Paper Grow menjadi potongan kecil, taruh di atas pot berisi tanah subur, tutup tipis dengan tanah lagi, lalu siram dengan air hingga lembap. Jangan lupa taruh di tempat yang terkena sinar matahari! ☀️💦";
-        } elseif (str_contains($lowerMessage, 'apa') && str_contains($lowerMessage, 'paper grow')) {
-            $botReply = "Paper Grow adalah kertas daur ulang inovatif yang di dalamnya sudah tertanam biji tanaman asli (seperti bayam, caisim, atau bunga). Daripada dibuang jadi sampah, kertas ini bisa kamu tanam dan akan tumbuh menjadi sayuran atau bunga sungguhan! ♻️🌿";
+        if (str_contains($lowerMessage, 'apa') && str_contains($lowerMessage, 'paper grow')) {
+            $botReply = "Paper Grow adalah inovasi **Kertas Benih Daur Ulang**. Kami mendaur ulang limbah kertas menjadi lembaran baru yang di dalamnya disematkan biji-biji tanaman (seperti bayam, caisim, atau bunga zinnia). Jadi, kertas ini tidak akan menjadi sampah, melainkan bisa kamu tanam dan akan tumbuh menjadi tanaman sungguhan! ♻️🌿";
+        } elseif (str_contains($lowerMessage, 'tumbuh') || str_contains($lowerMessage, 'lama') || str_contains($lowerMessage, 'waktu')) {
+            $botReply = "Biasanya benih dari Paper Grow akan mulai berkecambah (tumbuh) dalam waktu 3 hingga 7 hari, tergantung dari jenis benihnya. Bunga Bougainvillea mungkin butuh waktu lebih lama (14-21 hari). Pastikan tanahnya selalu lembap ya! ⏱️🌱";
+        } elseif (str_contains($lowerMessage, 'tanam') || str_contains($lowerMessage, 'cara') || str_contains($lowerMessage, 'bagaimana')) {
+            $botReply = "Cara menanamnya sangat mudah!\n1. Robek kertas Paper Grow menjadi potongan kecil.\n2. Taruh di atas pot berisi tanah subur.\n3. Tutup tipis dengan tanah (sekitar 1 cm).\n4. Siram dengan air hingga lembap.\n5. Taruh di tempat yang terkena sinar matahari pagi! ☀️💦";
+        } elseif (str_contains($lowerMessage, 'bibit') || str_contains($lowerMessage, 'benih') || str_contains($lowerMessage, 'biji') || str_contains($lowerMessage, 'sayur')) {
+            $botReply = "Saat ini Paper Grow menggunakan beberapa jenis benih pilihan yang mudah tumbuh, yaitu: **Bayam Hijau, Sawi Caisim, Selada Air, Bunga Zinnia, dan Bunga Bougainvillea**. Kamu bisa melihat detail masing-masing benih di Ensiklopedia kami di atas! 🥬🌸";
         } elseif (str_contains($lowerMessage, 'beli') || str_contains($lowerMessage, 'harga') || str_contains($lowerMessage, 'pesan') || str_contains($lowerMessage, 'produk')) {
-            $botReply = "Kamu bisa melihat berbagai paket Paper Grow beserta harganya di menu 'Produk' yang ada di bagian atas website ini. Kami punya paket Starter Kit yang seru banget lho! 🛒✨";
+            $botReply = "Kamu bisa melihat berbagai paket Paper Grow beserta harganya di menu 'Produk' yang ada di bagian atas website ini. Kami punya paket Starter Kit dan Edu Kit yang sangat cocok untuk belajar! 🛒✨";
         } elseif (str_contains($lowerMessage, 'kertas') || str_contains($lowerMessage, 'sampah') || str_contains($lowerMessage, 'daur ulang')) {
-            $botReply = "Betul sekali! Kertas Paper Grow terbuat dari 100% limbah kertas yang didaur ulang secara alami tanpa bahan kimia berbahaya, sehingga sangat aman untuk tanah dan bisa terurai sepenuhnya (biodegradable). 🌍♻️";
-        } elseif (str_contains($lowerMessage, 'matahari') || str_contains($lowerMessage, 'siram') || str_contains($lowerMessage, 'air') || str_contains($lowerMessage, 'rawat')) {
-            $botReply = "Merawatnya gampang banget! Siram potmu sehari sekali saja (jangan sampai tergenang air) dan pastikan potnya terkena sinar matahari pagi yang cukup. Tanaman sangat butuh cahaya untuk fotosintesis! 🌞💧";
+            $botReply = "Betul sekali! Kertas Paper Grow terbuat dari 100% limbah kertas (seperti kertas bekas kantor atau sekolah) yang didaur ulang secara alami tanpa bahan kimia berbahaya. Kertas ini 100% dapat terurai oleh alam (biodegradable) dan akan menjadi kompos bagi tanamanmu. 🌍♻️";
+        } elseif (str_contains($lowerMessage, 'matahari') || str_contains($lowerMessage, 'siram') || str_contains($lowerMessage, 'air') || str_contains($lowerMessage, 'rawat') || str_contains($lowerMessage, 'cahaya')) {
+            $botReply = "Merawatnya gampang banget! Siram potmu secukupnya (jangan sampai tergenang) dan pastikan potnya terkena sinar matahari yang cukup. Matahari sangat penting untuk proses Fotosintesis (memasak makanan bagi tanaman). 🌞💧";
+        } elseif (str_contains($lowerMessage, 'fotosintesis') || str_contains($lowerMessage, 'hijau') || str_contains($lowerMessage, 'klorofil')) {
+            $botReply = "Daun berwarna hijau karena memiliki zat **Klorofil**. Klorofil menangkap sinar matahari untuk mengubah air dan karbon dioksida menjadi makanan bagi tanaman. Proses memasak makanan ini disebut **Fotosintesis**! 🍃✨";
+        } elseif (str_contains($lowerMessage, 'ar') || str_contains($lowerMessage, '3d') || str_contains($lowerMessage, 'scan') || str_contains($lowerMessage, 'augmented')) {
+            $botReply = "Paper Grow juga dilengkapi dengan fitur Augmented Reality (AR) lho! Kamu bisa memindai (scan) marker pada kemasan kami menggunakan HP untuk melihat model 3D anatomi tanaman secara langsung. Keren banget kan? 📱✨";
         }
 
         // 3. Simpan pesan balasan dari Bot (Selalu di kiri, is_admin = true)

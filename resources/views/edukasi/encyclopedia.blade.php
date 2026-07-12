@@ -231,6 +231,11 @@
                         <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
                     </button>
                 </form>
+                <div class="px-4 py-2 bg-slate-50 text-center border-t border-slate-100 rounded-b-[2rem]">
+                    <p class="text-[10px] text-slate-400">
+                        *<strong class="font-semibold text-slate-500">Disclaimer:</strong> Profesor Grow adalah sistem AI otomatis yang <b>hanya dapat menjawab</b> pertanyaan seputar cara tanam, produk Paper Grow, dan pengetahuan botani dasar.
+                    </p>
+                </div>
             </div>
         </div>
 
