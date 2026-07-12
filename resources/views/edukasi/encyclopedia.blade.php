@@ -44,14 +44,14 @@
                         <div>
                             <!-- Slot Gambar (Otomatis muncul jika file tersedia) -->
                             @if(isset($seed['image_slot']))
-                                <div class="w-full h-48 mb-6 rounded-2xl overflow-hidden relative z-10 shadow-sm border border-slate-100 group-hover:shadow-md transition-shadow bg-slate-50">
+                                <div class="w-full h-48 mb-6 rounded-2xl overflow-hidden relative z-10 shadow-sm border border-slate-100 group-hover:shadow-md transition-shadow bg-white flex items-center justify-center p-2">
                                     <img src="{{ asset('images/' . $seed['image_slot']) }}" 
                                          alt="{{ $seed['name'] }}" 
-                                         class="w-full h-full object-cover {{ $seed['image_position'] ?? 'object-center' }} group-hover:scale-105 transition-transform duration-700"
+                                         class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-700"
                                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                                     >
                                     <!-- Ikon Fallback (Muncul jika gambar belum diupload) -->
-                                    <div class="hidden w-full h-full bg-gradient-to-br from-emerald-100 to-green-50 items-center justify-center text-6xl">
+                                    <div class="hidden w-full h-full bg-gradient-to-br from-emerald-100 to-green-50 items-center justify-center text-6xl rounded-xl">
                                         {{ $seed['icon'] }}
                                     </div>
                                 </div>
