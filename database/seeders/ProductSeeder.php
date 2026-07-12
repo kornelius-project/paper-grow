@@ -53,5 +53,17 @@ class ProductSeeder extends Seeder
             'image' => 'selada.jpeg',
             'stock' => 150
         ]);
+        // 4. Varian Tomat
+        Product::create([
+            'name' => 'Paper Grow - Paket Sayur Tomat',
+            'description' => 'Media tanam kertas daur ulang yang ramah lingkungan dengan benih Tomat. Memberikan pengalaman menanam fisik yang menyenangkan.',
+            'seed_type' => 'Tomat',
+            'size' => '10x15 cm',
+            'sheets_per_pack' => 5,
+            'qr_code_image' => 'tomat.jpg', // <-- Mengarah ke public/images/tomat.jpg
+            'price' => 15000,
+            'image' => 'tomat.jpeg',
+            'stock' => 150
+        ]);
     }
 }
