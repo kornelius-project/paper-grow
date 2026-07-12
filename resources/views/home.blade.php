@@ -166,88 +166,51 @@
 </div>
 
 <!-- Section Simulasi Animasi Menanam Interaktif (Edukasi Modern) -->
-<div class="bg-gradient-to-b from-slate-50 to-emerald-50/40 py-20 px-4 border-y border-slate-100">
-    <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-            <span class="text-xs font-bold text-emerald-700 bg-emerald-100/60 px-3 py-1.5 rounded-full uppercase tracking-widest">
-                Simulasi Interaktif
+<div id="simulasi-tanam" class="bg-gradient-to-b from-slate-50 to-emerald-50/40 py-20 px-4 border-y border-slate-100 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-green-100/50 blur-[100px] rounded-full pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-14">
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-100/60 px-4 py-2 rounded-full uppercase tracking-widest border border-emerald-200">
+                Praktik Langsung
             </span>
-            <h2 class="text-3xl font-black text-slate-900 mt-3 mb-2">Simulasi Menanam Paper Grow</h2>
-            <p class="text-slate-500 text-sm font-light">Klik tahapan di bawah ini untuk melihat bagaimana keajaiban kertas benih bekerja!</p>
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mt-4 mb-3">Simulasi Menanam Kertas</h2>
+            <p class="text-slate-500 text-base font-light max-w-2xl mx-auto">Ikuti 7 langkah nyata di bawah ini untuk mengubah lembaran kertas bekas menjadi sayuran segar yang siap dipanen. Geser untuk melihat prosesnya!</p>
         </div>
 
-        <!-- Wadah Utama Animasi -->
-        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100/80 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <!-- Horizontal Scroll Snap Container -->
+        <div class="flex overflow-x-auto pb-10 pt-4 snap-x snap-mandatory gap-6 px-4 md:px-0 hide-scrollbar" style="scrollbar-width: none;">
             
-            <!-- Sisi Kiri: Visualisasi Animasi Tanaman (CSS-Driven) -->
-            <div class="md:col-span-5 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl h-64 flex flex-col items-center justify-center relative overflow-hidden border border-green-100 shadow-inner">
-                
-                <!-- Elemen Tanah (Selalu Ada) -->
-                <div class="absolute bottom-0 inset-x-0 h-10 bg-amber-800/90 rounded-b-2xl border-t-2 border-amber-900/40"></div>
+            @php
+                $steps = [
+                    ['title' => 'Siapkan Media', 'desc' => 'Siapkan wadah pot dan isi dengan media tanam yang gembur (campuran tanah dan kompos).'],
+                    ['title' => 'Basahi Tanah', 'desc' => 'Siram tanah secara perlahan hingga seluruh permukaannya lembap merata agar benih mudah tumbuh.'],
+                    ['title' => 'Robek Kertas', 'desc' => 'Robek-robek produk Paper Grow yang sudah tak terpakai menjadi potongan-potongan kecil.'],
+                    ['title' => 'Tebarkan Kertas', 'desc' => 'Sebarkan robekan kertas berisi benih ajaib tadi tepat di atas permukaan tanah basah.'],
+                    ['title' => 'Tutup Tipis', 'desc' => 'Taburkan sedikit tanah lagi di atas potongan kertas agar tertutup tipis (maksimal 1 cm).'],
+                    ['title' => 'Penyiraman Rutin', 'desc' => 'Gunakan semprotan halus (spray) untuk menyiram secara rutin setiap pagi agar kelembapan terjaga.'],
+                    ['title' => 'Tunggu Tunas!', 'desc' => 'Dalam beberapa hari, keajaiban terjadi! Benih akan pecah dan mulai menumbuhkan tunas daun baru.'],
+                ];
+            @endphp
 
-                <!-- STEP 1: ANIMASI KERTAS BENIH -->
-                <div id="anim-step-1" class="step-anim flex flex-col items-center gap-2 transition-all duration-500 transform scale-100">
-                    <div class="w-24 h-16 bg-stone-200 rounded-md border-2 border-stone-300 shadow-md rotate-[-5deg] flex items-center justify-center p-2 relative animate-bounce">
-                        <div class="w-2 h-2 bg-slate-400 rounded-full absolute top-3 left-4"></div>
-                        <div class="w-1.5 h-1.5 bg-slate-400 rounded-full absolute bottom-4 right-6"></div>
-                        <span class="text-[8px] font-bold text-stone-400 select-none">PAPER GROW</span>
+            @foreach($steps as $index => $step)
+            <div class="min-w-[280px] md:min-w-[320px] bg-white rounded-3xl p-5 shadow-sm hover:shadow-xl border border-slate-100 snap-center shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                <div class="overflow-hidden rounded-2xl mb-5 aspect-square relative bg-slate-50 border border-slate-100 shadow-inner">
+                    <img src="{{ asset('images/step' . ($index + 1) . '.jpeg') }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Langkah {{ $index + 1 }}">
+                    <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-md text-emerald-700 font-black w-10 h-10 rounded-full flex items-center justify-center shadow-lg border border-emerald-100">
+                        0{{ $index + 1 }}
                     </div>
-                    <p class="text-xs font-bold text-amber-900 z-10">Kertas diletakkan di tanah</p>
                 </div>
-
-                <!-- STEP 2: ANIMASI PENYIRAMAN & TUNAS (Mulai Tersembunyi) -->
-                <div id="anim-step-2" class="step-anim hidden flex flex-col items-center gap-1 transition-all duration-500 transform scale-0">
-                    <!-- Ikon Awan/Air Siraman -->
-                    <div class="text-2xl animate-pulse mb-2">🌧️</div>
-                    <!-- Tunas Kecil -->
-                    <div class="w-3 h-6 bg-emerald-500 rounded-full animate-bounce"></div>
-                    <p class="text-xs font-bold text-emerald-800 z-10">Benih mulai berkecambah!</p>
-                </div>
-
-                <!-- STEP 3: ANIMASI TANAMAN TUMBUH BESAR (Mulai Tersembunyi) -->
-                <div id="anim-step-3" class="step-anim hidden flex flex-col items-center transition-all duration-500 transform scale-0">
-                    <div class="flex items-center justify-center relative">
-                        <!-- Daun Rimbun Sayur -->
-                        <div class="w-12 h-12 bg-green-500 rounded-full shadow-md animate-pulse"></div>
-                        <div class="w-10 h-10 bg-emerald-400 rounded-full absolute -top-4 -left-2 shadow-sm"></div>
-                        <div class="w-10 h-10 bg-green-600 rounded-full absolute -top-4 -right-2 shadow-sm"></div>
-                        <!-- Batang -->
-                        <div class="w-2 h-14 bg-amber-700 mx-auto absolute top-6 z-[-1]"></div>
-                    </div>
-                    <p class="text-xs font-bold text-green-900 mt-8 z-10">Sayuran tumbuh subur! 🥬</p>
-                </div>
+                <h3 class="text-xl font-black text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">{{ $step['title'] }}</h3>
+                <p class="text-sm text-slate-500 leading-relaxed font-light">{{ $step['desc'] }}</p>
             </div>
-
-            <!-- Sisi Kanan: Kontrol Navigasi Tab Interaktif -->
-            <div class="md:col-span-7 space-y-4">
-                <!-- Tombol Tab 1 -->
-                <button onclick="switchStep(1)" id="btn-step-1" class="step-btn w-full text-left p-4 rounded-xl border-2 border-green-600 bg-green-50/60 flex items-start gap-4 transition-all duration-200">
-                    <div class="w-8 h-8 bg-green-600 text-white font-bold rounded-lg flex items-center justify-center shrink-0">1</div>
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-sm">Tahap 1: Penebaran Kertas</h4>
-                        <p class="text-xs text-slate-500 font-light mt-0.5">Letakkan lembaran bubur kertas daur ulang Paper Grow tepat di atas permukaan tanah gembur.</p>
-                    </div>
-                </button>
-
-                <!-- Tombol Tab 2 -->
-                <button onclick="switchStep(2)" id="btn-step-2" class="step-btn w-full text-left p-4 rounded-xl border border-slate-100 bg-white hover:bg-slate-50 flex items-start gap-4 transition-all duration-200">
-                    <div class="w-8 h-8 bg-slate-200 text-slate-600 font-bold rounded-lg flex items-center justify-center shrink-0">2</div>
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-sm">Tahap 2: Hidrasi & Inkubasi</h4>
-                        <p class="text-xs text-slate-500 font-light mt-0.5">Siram dengan air secara berkala. Lapisan kertas sirkular akan melebur aman menjadi pupuk organik, memicu embrio biji sayur pecah.</p>
-                    </div>
-                </button>
-
-                <!-- Tombol Tab 3 -->
-                <button onclick="switchStep(3)" id="btn-step-3" class="step-btn w-full text-left p-4 rounded-xl border border-slate-100 bg-white hover:bg-slate-50 flex items-start gap-4 transition-all duration-200">
-                    <div class="w-8 h-8 bg-slate-200 text-slate-600 font-bold rounded-lg flex items-center justify-center shrink-0">3</div>
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-sm">Tahap 3: Pertumbuhan Vegetatif</h4>
-                        <p class="text-xs text-slate-500 font-light mt-0.5">Siswa dapat langsung memindai QR Code pintar untuk mengamati struktur sel 3D tanaman yang bertumbuh nyata di hadapan mereka!</p>
-                    </div>
-                </button>
-            </div>
-
+            @endforeach
+            
+        </div>
+        
+        <div class="text-center mt-4 hidden md:block">
+            <p class="text-xs text-slate-400 font-medium bg-white/50 backdrop-blur-sm inline-block px-5 py-2 rounded-full shadow-sm border border-slate-100/50">
+                <i>Scroll</i> horizontal atau geser layar sentuh Anda untuk melihat langkah selanjutnya &rarr;
+            </p>
         </div>
     </div>
 </div>
@@ -317,43 +280,7 @@
     </div>
 </div>
 
-<!-- JavaScript Logic untuk Mengatur Perubahan Animasi -->
-<script>
-function switchStep(stepNumber) {
-    // 1. Sembunyikan semua elemen animasi dan reset skala animasi
-    document.querySelectorAll('.step-anim').forEach(el => {
-        el.classList.add('hidden');
-        el.classList.remove('scale-100');
-        el.classList.add('scale-0');
-    });
 
-    // 2. Tampilkan animasi yang dipilih dengan efek transisi membesar
-    const activeAnim = document.getElementById('anim-step-' + stepNumber);
-    activeAnim.classList.remove('hidden');
-    setTimeout(() => {
-        activeAnim.classList.remove('scale-0');
-        activeAnim.classList.add('scale-100');
-    }, 50);
-
-    // 3. Reset semua gaya desain tombol navigasi kanan
-    document.querySelectorAll('.step-btn').forEach(btn => {
-        btn.classList.remove('border-green-600', 'bg-green-50/60');
-        btn.classList.add('border-slate-100', 'bg-white');
-        const badge = btn.querySelector('div');
-        badge.classList.remove('bg-green-600', 'text-white');
-        badge.classList.add('bg-slate-200', 'text-slate-600');
-    });
-
-    // 4. Berikan highlight warna hijau estetik pada tombol yang aktif
-    const activeBtn = document.getElementById('btn-step-' + stepNumber);
-    activeBtn.classList.remove('border-slate-100', 'bg-white');
-    activeBtn.classList.add('border-green-600', 'bg-green-50/60');
-    
-    const activeBadge = activeBtn.querySelector('div');
-    activeBadge.classList.remove('bg-slate-200', 'text-slate-600');
-    activeBadge.classList.add('bg-green-600', 'text-white');
-}
-</script>
 
 
     <!-- Floating WhatsApp Customer Service -->
