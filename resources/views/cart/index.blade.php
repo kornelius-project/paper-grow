@@ -13,6 +13,12 @@
         </div>
     @endif
 
+    @if($errors->has('checkout'))
+        <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl mb-6 text-sm font-medium">
+            ❌ {{ $errors->first('checkout') }}
+        </div>
+    @endif
+
     @if($carts->count() > 0)
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Daftar Produk -->

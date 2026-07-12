@@ -48,15 +48,15 @@
                     <td class="px-6 py-4 font-black text-[#1E352F]">Rp {{ number_format($order->total_price, 0, ',', '.') }}</td>
                     <td class="px-6 py-4">
                         @if($order->status == 'pending')
-                            <span class="px-3 py-1 bg-amber-100 text-amber-700 font-bold rounded-full text-xs">Menunggu Bayar</span>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-700 font-bold rounded-full text-xs">⏳ Belum Dibayar</span>
                         @elseif($order->status == 'processing')
-                            <span class="px-3 py-1 bg-blue-100 text-blue-700 font-bold rounded-full text-xs">Diproses</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 font-bold rounded-full text-xs">✅ Lunas (Diproses)</span>
                         @elseif($order->status == 'shipped')
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 font-bold rounded-full text-xs">Dikirim</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 font-bold rounded-full text-xs">🚚 Sedang Dikirim</span>
                         @elseif($order->status == 'completed')
-                            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 font-bold rounded-full text-xs">Selesai</span>
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 font-bold rounded-full text-xs">🎉 Selesai</span>
                         @else
-                            <span class="px-3 py-1 bg-red-100 text-red-700 font-bold rounded-full text-xs">Dibatalkan</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-700 font-bold rounded-full text-xs">❌ Dibatalkan</span>
                         @endif
                     </td>
                     <td class="px-6 py-4 text-center">
