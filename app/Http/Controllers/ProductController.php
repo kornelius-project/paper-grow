@@ -10,6 +10,12 @@ class ProductController extends Controller
 {
     public function index()
     {
+        // Auto-fix gambar tomat secara langsung
+        Product::where('name', 'like', '%Tomat%')->update([
+            'image' => 'tomat.jpeg',
+            'seed_type' => 'Tomat'
+        ]);
+
         // Mengambil semua data produk dari database
         $products = Product::all();
 
