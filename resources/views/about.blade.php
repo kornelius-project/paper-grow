@@ -114,7 +114,7 @@
             </div>
 
             <div class="relative max-w-3xl mx-auto px-4">
-                <input type="range" id="eco-slider" min="1" max="1000" value="50" class="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all">
+                <input type="range" id="eco-slider" min="1" max="1000" value="50" class="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition-all touch-none relative z-20">
                 <div class="flex justify-between text-xs text-slate-500 mt-4 font-bold uppercase tracking-wider">
                     <span>1 Paket</span>
                     <span>500 Paket</span>
@@ -247,16 +247,16 @@
                          style="-webkit-mask-image: url('{{ asset('images/map-indonesia.svg') }}'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('{{ asset('images/map-indonesia.svg') }}'); mask-size: contain; mask-repeat: no-repeat; mask-position: center;">
                     </div>
 
-                    <!-- Marker: Salatiga, Jawa Tengah -->
-                    <div class="absolute group/marker z-20 cursor-pointer" style="left: 36.5%; top: 67.5%;">
+                    <!-- Marker: Salatiga, Jawa Tengah (Diubah menjadi tag button agar responsif di HP) -->
+                    <button type="button" tabindex="0" class="absolute group/marker z-20 cursor-pointer focus:outline-none" style="left: 36.5%; top: 67.5%;">
                         <!-- Titik Pin Lokasi (Lebih Besar & Warna Kontras) -->
                         <span class="absolute flex h-8 w-8 -translate-x-1/2 -translate-y-1/2">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-60"></span>
                             <span class="relative inline-flex rounded-full h-4 w-4 m-auto bg-amber-500 border-2 border-white shadow-md"></span>
                         </span>
                         
-                        <!-- Tooltip -->
-                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max opacity-0 group-hover/marker:opacity-100 transition-all duration-300 pointer-events-none transform translate-y-2 group-hover/marker:translate-y-0">
+                        <!-- Tooltip (Aktif saat di-hover desktop atau di-tap/focus di HP) -->
+                        <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max opacity-0 group-hover/marker:opacity-100 group-focus/marker:opacity-100 group-active/marker:opacity-100 transition-all duration-300 pointer-events-none transform translate-y-2 group-hover/marker:translate-y-0 group-focus/marker:translate-y-0">
                             <div class="bg-white px-4 py-2 rounded-xl shadow-lg border border-slate-100 text-center relative">
                                 <p class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest">Pusat Operasional</p>
                                 <p class="text-sm font-black text-slate-800">Salatiga, Jawa Tengah</p>
@@ -264,7 +264,7 @@
                             <!-- Segitiga Bawah -->
                             <div class="w-3 h-3 bg-white border-b border-r border-slate-100 transform rotate-45 absolute -bottom-1.5 left-1/2 -translate-x-1/2"></div>
                         </div>
-                    </div>
+                    </button>
                 </div>
             </div>
 
