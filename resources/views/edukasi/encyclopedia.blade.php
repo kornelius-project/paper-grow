@@ -139,7 +139,7 @@
         </div>
 
         <!-- Forum Tanya Jawab Sains -->
-        <div class="max-w-4xl mx-auto mb-24 mt-16">
+        <div id="chat-section" class="max-w-4xl mx-auto mb-24 mt-16">
             <div class="text-center mb-10">
                 <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100 mb-4 inline-block">Forum Sains Cilik</span>
                 <h2 class="text-3xl font-black text-slate-800 mb-4">Tanya Profesor Grow 👨‍🔬</h2>

@@ -105,7 +105,7 @@ class PageController extends Controller
         ];
 
         // Ambil data chat testimoni
-        $chats = \App\Models\CommunityChat::orderBy('created_at', 'desc')->take(20)->get();
+        $chats = \App\Models\CommunityChat::orderBy('id', 'desc')->take(20)->get();
 
         return view('edukasi.encyclopedia', compact('seeds', 'chats'));
     }
@@ -154,6 +154,6 @@ class PageController extends Controller
             'is_admin' => true 
         ]);
 
-        return redirect()->back()->with('success', 'Pertanyaan terkirim!');
+        return redirect()->to(url()->previous() . '#chat-section')->with('success', 'Pertanyaan terkirim!');
     }
 }
