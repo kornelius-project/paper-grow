@@ -153,7 +153,7 @@
                 </div>
                 
                 <!-- CTA Box: Hadirkan di Kota Anda (Fungsi Demo) -->
-                <a href="{{ route('home') }}#ajukan-demo" class="block bg-emerald-50 border border-emerald-100 p-5 rounded-2xl group cursor-pointer hover:bg-emerald-100/60 transition-colors shadow-sm hover:shadow-md">
+                <a href="{{ route('partnership.index') }}" class="block bg-emerald-50 border border-emerald-100 p-5 rounded-2xl group cursor-pointer hover:bg-emerald-100/60 transition-colors shadow-sm hover:shadow-md">
                     <div class="flex items-center justify-between gap-4">
                         <div>
                             <h4 class="text-sm font-bold text-emerald-800">Hadirkan Paper Grow di Kotamu!</h4>
