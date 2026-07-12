@@ -71,6 +71,11 @@
                 </div>
             </div>
 
+            <a href="{{ route('partnership.index') }}" 
+               class="px-3 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all duration-200 {{ Request::is('kemitraan-sekolah') ? 'bg-emerald-100 text-emerald-800' : 'text-emerald-700 bg-emerald-50 hover:bg-emerald-100' }}">
+                Program Sekolah
+            </a>
+
             <a href="/about" 
                class="px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 {{ Request::is('about') ? 'bg-green-50 text-green-700' : 'text-slate-600 hover:text-green-600 hover:bg-slate-50' }}">
                 Tentang Kami

@@ -32,7 +32,7 @@
                     <span>Eksplorasi Varian Sayur</span>
                     <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
-                <a href="#ajukan-demo" class="flex items-center justify-center bg-white hover:bg-slate-50 text-slate-700 font-bold px-8 py-4 rounded-2xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1">
+                <a href="{{ route('partnership.index') }}" class="flex items-center justify-center bg-white hover:bg-slate-50 text-slate-700 font-bold px-8 py-4 rounded-2xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1">
                     Ajukan Demo (B2B)
                 </a>
             </div>
@@ -336,42 +336,7 @@ function switchStep(stepNumber) {
 }
 </script>
 
-<!-- Form Kemitraan Sekolah (Sisi Promosi Penjualan B2B) -->
-<div id="ajukan-demo" class="max-w-xl mx-auto py-20 px-4">
-    <div class="text-center mb-8">
-        <h2 class="text-3xl font-bold text-slate-900 mb-2">Bawa Inovasi Ini ke Sekolah Anda</h2>
-        <p class="text-sm text-slate-500 leading-relaxed">Dapatkan sesi pengenalan produk dan demonstrasi praktik menanam terintegrasi teknologi AR gratis dari tim ahli Paper Grow.</p>
-    </div>
-    
-    @if(session('success'))
-        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6 text-sm text-center font-medium">
-            {{ session('success') }}
-        </div>
-    @endif
 
-    <form action="{{ route('partnership.store') }}" method="POST" class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 space-y-4">
-        @csrf
-        <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nama Sekolah (SD/MI)</label>
-            <input type="text" name="school_name" class="w-full border border-slate-200 p-3 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none text-sm transition-all" placeholder="Contoh: SD Negeri 01 Salatiga" required>
-        </div>
-        <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nama Guru / Perwakilan Perusahaan</label>
-            <input type="text" name="teacher_name" class="w-full border border-slate-200 p-3 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none text-sm transition-all" placeholder="Nama Lengkap & Gelar" required>
-        </div>
-        <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">No. WhatsApp Aktif Kontak</label>
-            <input type="text" name="phone_number" class="w-full border border-slate-200 p-3 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none text-sm transition-all" placeholder="Contoh: 0857xxxxxxxx" required>
-        </div>
-        <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Catatan Tambahan (Opsional)</label>
-            <textarea name="message" class="w-full border border-slate-200 p-3 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none text-sm transition-all" rows="3" placeholder="Tuliskan rentang usia siswa atau preferensi jadwal kunjungan demonstrasi..."></textarea>
-        </div>
-        <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white py-3.5 rounded-xl font-bold shadow-md hover:shadow-lg transition-all duration-200 mt-2">
-            Kirim Permohonan Demo Resmi
-        </button>
-    </form>
-</div>
     <!-- Floating WhatsApp Customer Service -->
     <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Paper%20Grow,%20saya%20ingin%20bertanya-tanya%20seputar%20produk" target="_blank" class="fixed bottom-8 right-8 bg-[#25D366] hover:bg-[#1EBE5D] text-white p-4 rounded-full shadow-2xl hover:shadow-green-500/50 transition-all duration-300 transform hover:-translate-y-2 z-50 group flex items-center justify-center">
         <!-- SVG WA Icon -->

@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class PartnershipController extends Controller
 {
+    public function index()
+    {
+        return view('partnership.index');
+    }
+
     public function store(Request $request)
     {
         // 1. Validasi input dari form

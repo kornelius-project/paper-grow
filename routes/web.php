@@ -8,7 +8,8 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
-Route::post('/partnership', [PartnershipController::class, 'store'])->name('partnership.store');
+Route::get('/kemitraan-sekolah', [PartnershipController::class, 'index'])->name('partnership.index');
+Route::post('/kemitraan-sekolah', [PartnershipController::class, 'store'])->name('partnership.store');
 Route::get('/panduan-ar', function () {
     return view('ar-guide');
 })->name('ar.guide');
