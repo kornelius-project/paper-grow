@@ -106,6 +106,7 @@
                     </script>
                 @endif
 
+                @auth
                 <form action="{{ route('partnership.store') }}" method="POST" class="space-y-5">
                     @csrf
                     <div>
@@ -136,6 +137,39 @@
                         Data Anda aman bersama kami. Tim Paper Grow akan menghubungi Anda dalam waktu maksimal 1x24 jam kerja.
                     </p>
                 </form>
+                @else
+                <!-- Form Terkunci (Guest) -->
+                <div class="space-y-5 relative">
+                    <!-- Overlay Blur -->
+                    <div class="absolute inset-0 bg-white/50 backdrop-blur-[3px] z-10 flex flex-col items-center justify-center rounded-xl border border-slate-100">
+                        <div class="bg-white p-6 rounded-2xl shadow-xl shadow-slate-200/50 text-center max-w-sm border border-emerald-50">
+                            <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border-4 border-white shadow-sm">🔐</div>
+                            <h4 class="font-black text-slate-800 mb-2">Kemitraan Terkunci</h4>
+                            <p class="text-sm text-slate-500 mb-6 leading-relaxed">Untuk mengajukan demonstrasi, silakan masuk ke akun Anda agar kami dapat memverifikasi instansi Anda.</p>
+                            <a href="{{ route('login') }}" class="block w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 text-white font-bold py-3 rounded-xl transition-all shadow-md">
+                                Masuk Akun
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Dummy Inputs -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Nama Sekolah / Institusi</label>
+                        <input type="text" disabled class="w-full bg-slate-50 border border-slate-100 px-4 py-3 rounded-xl text-sm opacity-50 cursor-not-allowed">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Nama Perwakilan</label>
+                        <input type="text" disabled class="w-full bg-slate-50 border border-slate-100 px-4 py-3 rounded-xl text-sm opacity-50 cursor-not-allowed">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Nomor WhatsApp</label>
+                        <input type="text" disabled class="w-full bg-slate-50 border border-slate-100 px-4 py-3 rounded-xl text-sm opacity-50 cursor-not-allowed">
+                    </div>
+                    <button type="button" disabled class="w-full bg-slate-200 text-slate-400 py-4 rounded-xl font-bold cursor-not-allowed">
+                        Kirim Pengajuan Demo
+                    </button>
+                </div>
+                @endauth
             </div>
 
         </div>
