@@ -138,12 +138,12 @@
             </div>
         </div>
 
-        <!-- Ruang Komunitas / Chat Testimoni -->
+        <!-- Forum Tanya Jawab Sains -->
         <div class="max-w-4xl mx-auto mb-24 mt-16">
             <div class="text-center mb-10">
-                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100 mb-4 inline-block">Kisah Petani Cilik</span>
-                <h2 class="text-3xl font-black text-slate-800 mb-4">Apa Kata Mereka?</h2>
-                <p class="text-slate-500 font-light leading-relaxed max-w-2xl mx-auto">Cerita seru dari teman-teman, guru, dan orang tua yang sudah merasakan pengalaman menumbuhkan keajaiban Paper Grow.</p>
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100 mb-4 inline-block">Forum Sains Cilik</span>
+                <h2 class="text-3xl font-black text-slate-800 mb-4">Tanya Profesor Grow 👨‍🔬</h2>
+                <p class="text-slate-500 font-light leading-relaxed max-w-2xl mx-auto">Ada pertanyaan seputar tanaman, proses fotosintesis, atau biologi? Tanyakan di sini dan akan dijawab langsung oleh pakar botani kami!</p>
             </div>
             
             <div class="bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-slate-100 overflow-hidden flex flex-col h-[550px] relative">
@@ -154,9 +154,9 @@
                         <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-300 border-2 border-white rounded-full"></div>
                     </div>
                     <div>
-                        <h3 class="text-white font-bold text-lg leading-tight">Komunitas Paper Grow</h3>
+                        <h3 class="text-white font-bold text-lg leading-tight">Laboratorium Paper Grow</h3>
                         <p class="text-emerald-100 text-xs flex items-center gap-1 font-medium">
-                            <span class="w-1.5 h-1.5 rounded-full bg-green-300 animate-pulse"></span> Sedang Aktif
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-300 animate-pulse"></span> Profesor Online
                         </p>
                     </div>
                 </div>
@@ -181,42 +181,42 @@
                         <div class="flex items-start gap-3 group">
                             <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-blue-200">👦</div>
                             <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Raka, 9 Tahun (Surabaya) • 10:15</span>
+                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Siswa Penasaran (Jakarta) • 09:00</span>
                                 <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
-                                    Yeay! Bibit bayamku sudah tumbuh daunnya hari ini. Seru banget tiap pagi bangun tidur langsung ngecek pot. Terus pas di scan pakai HP, kelihatan akar virtualnya! 🥬✨
+                                    Prof, kenapa ya daun sayuranku warnanya hijau? Bukannya cahaya matahari warnanya kuning atau putih? 🤔
                                 </div>
                             </div>
                         </div>
 
                         <!-- Chat 2 (Kanan - Admin/Sistem) -->
                         <div class="flex items-start gap-3 flex-row-reverse group mt-2">
-                            <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-emerald-200">🤖</div>
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-emerald-200">👨‍🔬</div>
                             <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold mr-1 mb-1 block text-right tracking-wide">Paper Grow Bot • 10:16</span>
+                                <span class="text-[11px] text-slate-400 font-bold mr-1 mb-1 block text-right tracking-wide">Profesor Grow • 09:15</span>
                                 <div class="bg-emerald-100 p-4 rounded-2xl rounded-tr-sm shadow-sm border border-emerald-200 text-emerald-900 text-sm leading-relaxed text-right group-hover:shadow-md transition-shadow">
-                                    Wah, hebat sekali Kak Raka! Jangan lupa disiram air secukupnya dan dijemur matahari pagi ya biar bayamnya makin subur. ☀️💦
+                                    Pertanyaan yang sangat cerdas! Daun berwarna hijau karena memiliki pigmen bernama <b>Klorofil</b>. Klorofil ini menyerap sinar matahari berwarna merah dan biru, tapi "memantulkan" warna hijau ke mata kita. Fungsinya adalah untuk memasak makanan bagi tanaman yang disebut proses Fotosintesis! 🍃✨
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Chat 3 (Kiri - Guru/Sekolah) -->
+                        <!-- Chat 3 (Kiri - Siswa) -->
                         <div class="flex items-start gap-3 group mt-6">
-                            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-pink-200">👩‍🏫</div>
+                            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-pink-200">👧</div>
                             <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Ibu Ratna (Guru IPA - Bandung) • 14:30</span>
+                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Alya (Bandung) • 13:20</span>
                                 <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
-                                    Paper Grow ini sangat membantu untuk praktek IPAS Kurikulum Merdeka. Anak-anak di kelas sangat antusias waktu presentasi menggunakan model 3D (AR). Kertas daur ulangnya juga mengajarkan mereka soal lingkungan. Sangat direkomendasikan! 📚👍
+                                    Kalau bijinya terkurung di dalam kertas, apa nggak susah tumbuhnya Prof? Terus kertasnya akan jadi sampah lagi?
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Chat 4 (Kiri - Orang Tua) -->
-                        <div class="flex items-start gap-3 group mt-4">
-                            <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-amber-200">👩‍👧</div>
+                        <!-- Chat 4 (Kanan - Admin) -->
+                        <div class="flex items-start gap-3 flex-row-reverse group mt-2">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-lg shrink-0 shadow-sm border border-emerald-200">👨‍🔬</div>
                             <div class="max-w-[80%]">
-                                <span class="text-[11px] text-slate-400 font-bold ml-1 mb-1 block tracking-wide">Bunda Salsa (Jakarta) • Kemarin</span>
-                                <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-slate-200 text-slate-700 text-sm leading-relaxed group-hover:shadow-md transition-shadow">
-                                    Awalnya iseng beli buat aktivitas *weekend* bareng anak biar nggak main *gadget* terus. Ternyata sebagus itu konsepnya! Sekarang anakku jadi suka makan sayur gara-gara menanam sawinya sendiri 😂
+                                <span class="text-[11px] text-slate-400 font-bold mr-1 mb-1 block text-right tracking-wide">Profesor Grow • 13:45</span>
+                                <div class="bg-emerald-100 p-4 rounded-2xl rounded-tr-sm shadow-sm border border-emerald-200 text-emerald-900 text-sm leading-relaxed text-right group-hover:shadow-md transition-shadow">
+                                    Tidak susah, Alya! Kertas <i>Paper Grow</i> terbuat dari bubur kertas daur ulang tanpa bahan kimia keras. Saat dibasahi, kertasnya akan melunak. Dan hebatnya, kertas tersebut 100% <i>biodegradable</i> (dapat terurai oleh alam) sehingga lama-lama akan menyatu dengan tanah dan menjadi kompos yang menyuburkan akar tunasmu! 🌱
                                 </div>
                             </div>
                         </div>
@@ -226,7 +226,7 @@
                 <!-- Chat Input Real Form -->
                 <form action="{{ route('edukasi.chat.store') }}" method="POST" class="bg-white p-4 border-t border-slate-100 flex gap-3 items-center shadow-[0_-5px_15px_rgba(0,0,0,0.02)] relative z-10">
                     @csrf
-                    <input type="text" name="message" required placeholder="Tulis pengalaman belajarmu di sini..." class="flex-1 bg-slate-50 rounded-full px-5 py-3 text-sm text-slate-700 border border-slate-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all">
+                    <input type="text" name="message" required placeholder="Tanyakan hal ilmiah seputar botani di sini..." class="flex-1 bg-slate-50 rounded-full px-5 py-3 text-sm text-slate-700 border border-slate-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all">
                     <button type="submit" class="bg-emerald-500 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-emerald-600 hover:scale-105 transition-all shadow-md shrink-0">
                         <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
                     </button>
