@@ -49,41 +49,33 @@
             </div>
         </div>
 
-        <!-- Kolom Kanan: Grafis / Glassmorphism Mockup -->
+        <!-- Kolom Kanan: Grafis / Gambar Produk (Besar & Jelas) -->
         <div class="relative hidden lg:flex items-center justify-center h-full">
-            <!-- Lingkaran Latar Belakang Animasi -->
-            <div class="absolute w-[450px] h-[450px] border border-emerald-200/50 rounded-full animate-[spin_60s_linear_infinite]"></div>
-            <div class="absolute w-[350px] h-[350px] border border-green-200 border-dashed rounded-full animate-[spin_40s_linear_infinite_reverse]"></div>
+            <!-- Glow background statis agar gambar lebih menonjol -->
+            <div class="absolute w-[500px] h-[500px] bg-gradient-to-tr from-emerald-300/30 to-green-200/30 rounded-full blur-3xl z-0"></div>
             
-            <!-- Main Glass Card (Produk Paper Grow) -->
-            <div class="relative z-10 w-80 h-96 bg-white/60 backdrop-blur-xl border border-white shadow-2xl shadow-emerald-900/10 rounded-[2rem] p-6 flex flex-col items-center justify-center transform hover:rotate-2 hover:scale-105 transition-all duration-500 animate-[bounce_8s_ease-in-out_infinite]">
+            <!-- Wadah Gambar Utama -->
+            <div class="relative z-10 w-full max-w-lg">
+                <!-- Gambar Produk Asli -->
+                <img src="{{ asset('images/paper-grow beranda.png') }}" 
+                     alt="Produk Paper Grow" 
+                     onerror="this.src='{{ asset('images/paper-grow beranda.jpg') }}'"
+                     class="w-full h-auto object-contain drop-shadow-2xl rounded-2xl transform hover:scale-105 transition-transform duration-500 relative z-10 border-4 border-white/50">
                 
-                <!-- Floating Badge 1 -->
-                <div class="absolute -left-12 top-20 bg-white px-4 py-2 rounded-xl shadow-lg border border-slate-100 flex items-center gap-2 transform -rotate-6 animate-[bounce_6s_ease-in-out_infinite_reverse]">
-                    <span class="text-xl">♻️</span>
+                <!-- Floating Badge 1 (Statis) -->
+                <div class="absolute -left-8 top-12 bg-white px-5 py-3 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 transform -rotate-3 z-20 hover:scale-110 transition-transform">
+                    <span class="text-2xl">♻️</span>
                     <div class="flex flex-col">
                         <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Material</span>
-                        <span class="text-xs font-black text-[#1E352F]">100% Recycled</span>
+                        <span class="text-sm font-black text-[#1E352F]">100% Recycled</span>
                     </div>
                 </div>
 
-                <!-- Floating Badge 2 -->
-                <div class="absolute -right-8 bottom-24 bg-gradient-to-r from-emerald-500 to-green-500 px-4 py-2 rounded-xl shadow-lg shadow-emerald-500/30 flex items-center gap-2 transform rotate-6 animate-[bounce_7s_ease-in-out_infinite]">
-                    <span class="text-xl">📱</span>
-                    <span class="text-xs font-black text-white">AR Ready</span>
+                <!-- Floating Badge 2 (Statis) -->
+                <div class="absolute -right-4 bottom-16 bg-gradient-to-r from-emerald-600 to-green-500 px-5 py-3 rounded-2xl shadow-xl shadow-emerald-500/30 flex items-center gap-3 transform rotate-3 z-20 hover:scale-110 transition-transform">
+                    <span class="text-2xl">📱</span>
+                    <span class="text-sm font-black text-white">Teknologi AR</span>
                 </div>
-                
-                <!-- Gambar Produk Asli (Menggantikan CSS) -->
-                <div class="relative w-full h-full rounded-xl overflow-hidden group shadow-inner">
-                    <img src="{{ asset('images/paper-grow beranda.png') }}" 
-                         alt="Produk Paper Grow" 
-                         onerror="this.src='{{ asset('images/paper-grow beranda.jpg') }}'"
-                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                    
-                    <!-- Animasi Garis Scan AR -->
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.8)] opacity-0 group-hover:opacity-100 group-hover:animate-[ping_3s_linear_infinite] transition-opacity duration-300 z-20 pointer-events-none"></div>
-                </div>
-
             </div>
         </div>
     </div>
