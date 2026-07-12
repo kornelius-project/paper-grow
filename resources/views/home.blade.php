@@ -57,7 +57,7 @@
             <!-- Wadah Gambar Utama (Dibuat Lebih Estetik & Proporsional) -->
             <div class="relative z-10 w-[85%] max-w-sm mt-4 group">
                 <!-- Gambar Produk Asli -->
-                <img src="{{ asset('images/paper-grow beranda.png') }}" 
+                <img src="{{ asset('images/paper-grow beranda.png') }}?v=2" 
                      alt="Produk Paper Grow" 
                      onerror="this.src='{{ asset('images/paper-grow beranda.jpg') }}'"
                      class="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(16,185,129,0.3)] rounded-[2rem] transform group-hover:-translate-y-2 group-hover:scale-105 transition-all duration-500 relative z-10 border-4 border-white">
