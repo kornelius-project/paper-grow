@@ -17,13 +17,12 @@ class PageController extends Controller
         ];
 
         // Hitung statistik (dinamis)
-        $userCount = \App\Models\User::count();
+        $partnershipCount = \App\Models\Partnership::count();
+        $schoolCount = 2 + $partnershipCount; // Base 2 sekolah untuk social proof + data riil
         $orderCount = \App\Models\Order::count();
-        // Karena belum ada kolom khusus kota, kita bisa set static/estimasi
-        // atau jika order > 0, set ke angka dinamis (misal base + pesanan)
         $cityCount = 8 + ($orderCount > 0 ? (int)($orderCount / 2) : 0);
         
-        return view('home', compact('sdgImpacts', 'userCount', 'orderCount', 'cityCount'));
+        return view('home', compact('sdgImpacts', 'schoolCount', 'orderCount', 'cityCount'));
     }
 
     // Tambahkan juga fungsi about() agar nanti halaman 'Tentang Kami' tidak eror

@@ -54,16 +54,16 @@
             <!-- Glow background statis agar gambar lebih menonjol -->
             <div class="absolute w-[500px] h-[500px] bg-gradient-to-tr from-emerald-300/30 to-green-200/30 rounded-full blur-3xl z-0"></div>
             
-            <!-- Wadah Gambar Utama -->
-            <div class="relative z-10 w-full max-w-lg">
+            <!-- Wadah Gambar Utama (Dibuat Lebih Estetik & Proporsional) -->
+            <div class="relative z-10 w-[85%] max-w-sm mt-4 group">
                 <!-- Gambar Produk Asli -->
                 <img src="{{ asset('images/paper-grow beranda.png') }}" 
                      alt="Produk Paper Grow" 
                      onerror="this.src='{{ asset('images/paper-grow beranda.jpg') }}'"
-                     class="w-full h-auto object-contain drop-shadow-2xl rounded-2xl transform hover:scale-105 transition-transform duration-500 relative z-10 border-4 border-white/50">
+                     class="w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(16,185,129,0.3)] rounded-[2rem] transform group-hover:-translate-y-2 group-hover:scale-105 transition-all duration-500 relative z-10 border-4 border-white">
                 
                 <!-- Floating Badge 1 (Statis) -->
-                <div class="absolute -left-8 top-12 bg-white px-5 py-3 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 transform -rotate-3 z-20 hover:scale-110 transition-transform">
+                <div class="absolute -left-10 top-10 bg-white px-5 py-3 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 transform -rotate-6 z-20 hover:scale-110 hover:rotate-0 transition-transform">
                     <span class="text-2xl">♻️</span>
                     <div class="flex flex-col">
                         <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Material</span>
@@ -72,7 +72,7 @@
                 </div>
 
                 <!-- Floating Badge 2 (Statis) -->
-                <div class="absolute -right-4 bottom-16 bg-gradient-to-r from-emerald-600 to-green-500 px-5 py-3 rounded-2xl shadow-xl shadow-emerald-500/30 flex items-center gap-3 transform rotate-3 z-20 hover:scale-110 transition-transform">
+                <div class="absolute -right-6 bottom-12 bg-gradient-to-r from-emerald-600 to-green-500 px-5 py-3 rounded-2xl shadow-xl shadow-emerald-500/30 flex items-center gap-3 transform rotate-6 z-20 hover:scale-110 hover:rotate-0 transition-transform">
                     <span class="text-2xl">📱</span>
                     <span class="text-sm font-black text-white">Teknologi AR</span>
                 </div>
@@ -81,31 +81,7 @@
     </div>
 </div>
 
-<!-- Section Statistik / Social Proof -->
-<div class="bg-white py-12 border-b border-slate-100 relative z-20">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            <!-- Stat 1: Pengguna Terdaftar -->
-            <div class="py-4 md:py-0 transform hover:scale-105 transition-transform duration-300">
-                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $userCount }}+</div>
-                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Pengguna Terdaftar</div>
-                <p class="text-xs text-slate-500 mt-1">Siswa & Guru di Indonesia</p>
-            </div>
-            <!-- Stat 2: Pesanan Selesai -->
-            <div class="py-4 md:py-0 transform hover:scale-105 transition-transform duration-300">
-                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $orderCount }}+</div>
-                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Paket Terjual</div>
-                <p class="text-xs text-slate-500 mt-1">Kertas benih & modul ajar</p>
-            </div>
-            <!-- Stat 3: Kota Jangkauan -->
-            <div class="py-4 md:py-0 transform hover:scale-105 transition-transform duration-300">
-                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $cityCount }}+</div>
-                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Kota Terjangkau</div>
-                <p class="text-xs text-slate-500 mt-1">Telah dikirim ke berbagai kota</p>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- Section Penjelasan: Apa itu Paper Grow? (Sisi Edukatif) -->
 <div class="py-20 max-w-6xl mx-auto px-4">
     <div class="text-center mb-16">
@@ -275,6 +251,32 @@
         </div>
     </div>
 </div>
+<!-- Section Statistik / Social Proof (Pindah ke Bawah) -->
+<div class="bg-white pt-24 pb-12 relative z-20 border-t border-slate-100">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <!-- Stat 1: Sekolah Mitra -->
+            <div class="py-4 md:py-0 transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $schoolCount }}+</div>
+                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Sekolah Mitra</div>
+                <p class="text-xs text-slate-500 mt-1">Telah mendaftar edukasi</p>
+            </div>
+            <!-- Stat 2: Pesanan Selesai -->
+            <div class="py-4 md:py-0 transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $orderCount }}+</div>
+                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Paket Terjual</div>
+                <p class="text-xs text-slate-500 mt-1">Kertas benih & modul ajar</p>
+            </div>
+            <!-- Stat 3: Kota Jangkauan -->
+            <div class="py-4 md:py-0 transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="text-4xl lg:text-5xl font-black text-emerald-600 mb-2">{{ $cityCount }}+</div>
+                <div class="text-sm font-bold text-slate-700 uppercase tracking-wider">Kota Terjangkau</div>
+                <p class="text-xs text-slate-500 mt-1">Telah dikirim ke berbagai kota</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Section Capaian Edukasi (Nilai Jual Akademis B2B) -->
 <div class="py-20 bg-white px-4">
     <div class="max-w-6xl mx-auto">
