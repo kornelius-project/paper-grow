@@ -57,6 +57,51 @@
     </div>
 </div>
 
+<!-- Galeri Edukasi (Growth & Impact) -->
+<div class="bg-slate-50 py-20 px-4 border-t border-slate-100">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest border border-blue-200 mb-4">
+                Aksi Nyata & Pertumbuhan
+            </span>
+            <h2 class="text-3xl font-black text-slate-900 mb-4">Membangun Ekosistem Hijau Bersama</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Ribuan siswa telah merasakan serunya belajar sains secara langsung melalui Paper Grow. Berikut adalah dokumentasi keseruan mereka saat mempraktikkan gaya hidup berkelanjutan di kelas.
+            </p>
+        </div>
+
+        <!-- Grid Galeri -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="group relative rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-[300px]">
+                <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <img src="{{ asset('images/mengajar2.jpeg') }}" alt="Dokumentasi Edukasi 1" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900/90 to-transparent z-20 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <h4 class="text-white font-bold text-lg">Praktik Menanam</h4>
+                    <p class="text-emerald-300 text-sm">Siswa SD memindahkan benih</p>
+                </div>
+            </div>
+
+            <div class="group relative rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-[300px]">
+                <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <img src="{{ asset('images/mengajar3.jpeg') }}" alt="Dokumentasi Edukasi 2" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900/90 to-transparent z-20 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <h4 class="text-white font-bold text-lg">Sesi Penjelasan</h4>
+                    <p class="text-emerald-300 text-sm">Edukasi sirkular ekonomi</p>
+                </div>
+            </div>
+
+            <div class="group relative rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-[300px]">
+                <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <img src="{{ asset('images/mengajar4.jpeg') }}" alt="Dokumentasi Edukasi 3" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900/90 to-transparent z-20 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <h4 class="text-white font-bold text-lg">Antusiasme Belajar</h4>
+                    <p class="text-emerald-300 text-sm">Integrasi Augmented Reality</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Section Formulir Pendaftaran Demo -->
 <div class="bg-gradient-to-b from-emerald-50/50 to-white py-20 px-4 border-t border-emerald-50">
     <div class="max-w-4xl mx-auto">
