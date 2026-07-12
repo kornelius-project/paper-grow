@@ -33,20 +33,20 @@ class PageController extends Controller
         [
             'name' => 'Setyo Budi Nugroho',
             'role' => 'Chief Executive Officer (CEO)',
-            'image' => 'setyo.jpeg', // Taruh foto Anda di folder public/images/
-            'bio' => 'Mahasiswa Informatika UKSW yang fokus pada arah strategis bisnis, integrasi teknologi, dan keberlanjutan inovasi produk.'
+            'image' => 'setyo.jpeg',
+            'bio' => 'Mahasiswa FKIP (Pendidikan Guru SD) yang berfokus penuh pada perumusan edukasi dan inovasi dari produk Paper Grow itu sendiri.'
         ],
         [
             'name' => 'Vyrla Juniati',
-            'role' => 'Chief Operating & Marketing Officer',
+            'role' => 'Chief Financial & Operating Officer',
             'image' => 'vyrla.jpeg',
-            'bio' => 'Bertanggung jawab atas efisiensi manajemen produksi, rantai pasok kualitas kertas benih, serta kemitraan strategis dengan sekolah.'
+            'bio' => 'Mahasiswi FEB (Akuntansi) yang memegang kendali utama pada sektor keuangan, operasional, dan manajemen strategis pemasaran.'
         ],
         [
             'name' => 'Kornelius Candra Kurniawan',
             'role' => 'Chief Technology Officer (CTO)',
             'image' => 'kornelius.JPG',
-            'bio' => 'Mengembangkan, mengelola, dan mengintegrasikan konten visual edukasi 3D & Augmented Reality interaktif.'
+            'bio' => 'Mahasiswa FTI (Teknik Informatika) yang berdedikasi mengembangkan infrastruktur perangkat lunak dan teknologi digital perusahaan.'
         ]
     ];
 
