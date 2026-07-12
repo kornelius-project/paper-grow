@@ -144,17 +144,57 @@
     </main>
 
     <!-- Footer Website Informatif & Berbasis Kemitraan (SDG 17) -->
-    <footer class="bg-green-950 text-white py-8 mt-12 text-sm border-t-4 border-emerald-500">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="text-center sm:text-left">
-                <p class="font-bold tracking-wide text-base">PAPER GROW INDONESIA</p>
-                <!-- Menekankan kolaborasi strategis sesuai proposal Anda -->
-                <p class="text-xs text-emerald-300/80 font-light mt-1 max-w-xl leading-relaxed">
-                    Mengakselerasi SDG 17 melalui Kemitraan Edukasi Berkelanjutan bersama Universitas Kristen Satya Wacana (UKSW) Salatiga.
+    <footer class="bg-green-950 text-white pt-12 pb-8 mt-12 text-sm border-t-4 border-emerald-500">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <!-- Kolom 1: Tentang -->
+            <div class="text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-8 h-8 brightness-0 invert opacity-90">
+                    <p class="font-bold tracking-wide text-lg text-white">PAPER GROW</p>
+                </div>
+                <p class="text-xs text-emerald-300/80 font-light leading-relaxed max-w-sm mx-auto md:mx-0">
+                    Mengakselerasi SDG 17 melalui Kemitraan Edukasi Berkelanjutan. Mengubah limbah menjadi pendorong literasi sains dan ekologi melalui teknologi masa depan.
                 </p>
             </div>
-            <div class="text-xs text-emerald-400 font-medium bg-emerald-900/40 px-3 py-1.5 rounded-lg border border-emerald-800/60 whitespace-nowrap">
-                &copy; 2026 Paper Grow UKSW Salatiga. All Rights Reserved.
+
+            <!-- Kolom 2: Tautan Cepat -->
+            <div class="text-center md:text-left">
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider text-xs">Jelajahi</h4>
+                <ul class="space-y-2 text-emerald-300/80 text-xs">
+                    <li><a href="{{ route('home') }}" class="hover:text-emerald-400 transition-colors">Beranda</a></li>
+                    <li><a href="{{ route('products.index') }}" class="hover:text-emerald-400 transition-colors">Katalog Produk</a></li>
+                    <li><a href="{{ route('edukasi.encyclopedia') }}" class="hover:text-emerald-400 transition-colors">Ensiklopedia Botani</a></li>
+                    <li><a href="/about" class="hover:text-emerald-400 transition-colors">Tentang Tim Kami</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom 3: Hubungi Kami -->
+            <div class="text-center md:text-left">
+                <h4 class="font-bold text-white mb-4 uppercase tracking-wider text-xs">Hubungi Kami</h4>
+                <ul class="space-y-3 text-emerald-300/80 text-xs">
+                    <li class="flex items-start justify-center md:justify-start gap-2">
+                        <span class="text-emerald-400 mt-0.5">📍</span>
+                        <span class="leading-relaxed">Universitas Kristen Satya Wacana (UKSW)<br>Jl. Diponegoro No. 52-60, Salatiga<br>Jawa Tengah, Indonesia 50711</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <span class="text-emerald-400">📞</span>
+                        <a href="https://wa.me/62895413460406" target="_blank" class="hover:text-emerald-400 transition-colors">+62 895-4134-60406 (WhatsApp)</a>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start gap-2">
+                        <span class="text-emerald-400">📧</span>
+                        <a href="mailto:hello@papergrow.id" class="hover:text-emerald-400 transition-colors">hello@papergrow.id</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Garis Pemisah & Hak Cipta -->
+        <div class="max-w-6xl mx-auto px-4 pt-6 border-t border-emerald-900 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="text-[10px] text-emerald-500/70 text-center sm:text-left">
+                Merupakan proyek inovasi pendidikan berwawasan lingkungan & teknologi.
+            </p>
+            <div class="text-[10px] text-emerald-400 font-medium bg-emerald-900/40 px-3 py-1.5 rounded-lg border border-emerald-800/60 whitespace-nowrap">
+                &copy; {{ date('Y') }} Paper Grow UKSW Salatiga. All Rights Reserved.
             </div>
         </div>
     </footer>
