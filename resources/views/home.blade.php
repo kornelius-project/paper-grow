@@ -206,7 +206,7 @@
                 @endphp
 
                 @foreach($steps as $index => $step)
-                <div class="min-w-[280px] md:min-w-[340px] w-[280px] md:w-[340px] bg-white rounded-3xl p-6 shadow-[0_4px_20px_rgb(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgb(16,185,129,0.15)] border border-slate-100 hover:border-emerald-200 snap-center shrink-0 group transition-all duration-300 hover:-translate-y-3 select-none relative overflow-hidden">
+                <div class="min-w-[260px] md:min-w-[300px] w-[260px] md:w-[300px] bg-white rounded-3xl p-6 shadow-[0_4px_20px_rgb(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgb(16,185,129,0.15)] border border-slate-100 hover:border-emerald-200 snap-center shrink-0 group transition-all duration-300 hover:-translate-y-3 select-none relative overflow-hidden">
                     
                     <!-- Latar Belakang Kartu (Glow) saat di-hover -->
                     <div class="absolute inset-0 bg-gradient-to-br from-emerald-50/0 to-green-50/0 group-hover:from-emerald-50/40 group-hover:to-green-100/40 transition-colors duration-500 z-0 pointer-events-none"></div>
