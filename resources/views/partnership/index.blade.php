@@ -7,16 +7,23 @@
     <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
     <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500 rounded-full blur-[100px] opacity-20"></div>
     
-    <div class="relative max-w-5xl mx-auto text-center space-y-6">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest border border-emerald-500/30">
-            Paper Grow For Schools (B2B)
-        </span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
-            Revolusi Pembelajaran Sains <br> Berbasis <span class="text-emerald-400">Proyek & Teknologi</span>
-        </h1>
-        <p class="text-lg text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
-            Dukung implementasi Kurikulum Merdeka di sekolah Anda melalui praktik menanam cerdas. Gabungkan daur ulang sirkular ekonomi dengan teknologi Augmented Reality dalam satu media ajar inovatif.
-        </p>
+    <div class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
+        <div class="text-left space-y-6">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest border border-emerald-500/30">
+                Paper Grow For Schools (B2B)
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+                Revolusi Pembelajaran Sains <br> Berbasis <span class="text-emerald-400">Proyek & Teknologi</span>
+            </h1>
+            <p class="text-lg text-slate-300 max-w-xl font-light leading-relaxed">
+                Dukung implementasi Kurikulum Merdeka di sekolah Anda melalui praktik menanam cerdas. Gabungkan daur ulang sirkular ekonomi dengan teknologi Augmented Reality dalam satu media ajar inovatif.
+            </p>
+        </div>
+        
+        <div class="relative group">
+            <div class="absolute -inset-4 bg-emerald-500/20 rounded-[2rem] blur-xl transform -rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+            <img src="{{ asset('images/mengajar.jpeg') }}" alt="Demonstrasi Paper Grow di Sekolah" class="relative rounded-[2rem] shadow-2xl object-cover w-full h-[300px] lg:h-[400px] border border-white/10 transform group-hover:scale-[1.02] transition-transform duration-500">
+        </div>
     </div>
 </div>
 
