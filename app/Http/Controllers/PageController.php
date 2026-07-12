@@ -58,6 +58,16 @@ class PageController extends Controller
     {
         $seeds = [
             [
+                'name' => 'Tomat',
+                'icon' => '🍅',
+                'germination' => '5 - 10 Hari',
+                'water' => 'Sedang (1x Sehari)',
+                'sunlight' => 'Penuh',
+                'fact' => 'Tomat kaya akan Vitamin C dan likopen. Buahnya secara botani adalah beri, yang berarti ia tergolong buah-buahan, bukan sayuran!',
+                'product_url' => route('products.index'),
+                'image_slot' => 'benih_tomat.jpeg'
+            ],
+            [
                 'name' => 'Bayam Hijau',
                 'icon' => '🥬',
                 'germination' => '3 - 5 Hari',
@@ -65,7 +75,7 @@ class PageController extends Controller
                 'sunlight' => 'Penuh',
                 'fact' => 'Bayam sangat kaya akan zat besi dan vitamin K. Akar bayam juga membantu menggemburkan tanah.',
                 'product_url' => route('products.index'),
-                'image_slot' => 'bayam.jpeg'
+                'image_slot' => 'benih_bayam.jpeg'
             ],
             [
                 'name' => 'Sawi Caisim',
@@ -75,37 +85,17 @@ class PageController extends Controller
                 'sunlight' => 'Parsial - Penuh',
                 'fact' => 'Sawi sangat cepat panen (hanya ~30 hari) sehingga sangat cocok untuk edukasi kesabaran dan proses biologis anak.',
                 'product_url' => route('products.index'),
-                'image_slot' => 'sawi.jpeg'
+                'image_slot' => 'benih_sawi.jpeg'
             ],
             [
-                'name' => 'Selada Air',
+                'name' => 'Selada Keriting',
                 'icon' => '🥗',
                 'germination' => '7 - 10 Hari',
                 'water' => 'Tinggi (Selalu Lembap)',
                 'sunlight' => 'Parsial',
-                'fact' => 'Selada memiliki daun yang sangat sensitif terhadap panas. Tanaman ini bagus untuk percobaan hidroponik sederhana.',
+                'fact' => 'Selada keriting memiliki daun yang sangat sensitif terhadap panas. Tanaman ini bagus untuk percobaan hidroponik sederhana.',
                 'product_url' => route('products.index'),
-                'image_slot' => 'selada.jpeg'
-            ],
-            [
-                'name' => 'Bunga Zinnia',
-                'icon' => '🌸',
-                'germination' => '5 - 7 Hari',
-                'water' => 'Sedang (1x Sehari)',
-                'sunlight' => 'Penuh',
-                'fact' => 'Bunga Zinnia sangat disukai oleh kupu-kupu dan lebah, sehingga sangat baik untuk edukasi ekosistem polinator (SDG 15).',
-                'product_url' => route('products.index'),
-                'image_slot' => 'zinnia.jpeg' // Asumsi akan ada gambar zinnia
-            ],
-            [
-                'name' => 'Tomat',
-                'icon' => '🍅',
-                'germination' => '5 - 10 Hari',
-                'water' => 'Sedang (1x Sehari)',
-                'sunlight' => 'Penuh',
-                'fact' => 'Tomat kaya akan Vitamin C dan likopen. Buahnya secara botani adalah beri, yang berarti ia tergolong buah-buahan, bukan sayuran!',
-                'product_url' => route('products.index'),
-                'image_slot' => 'tomat.jpeg' // Slot untuk gambar
+                'image_slot' => 'benih_selada.jpeg'
             ]
         ];
 
