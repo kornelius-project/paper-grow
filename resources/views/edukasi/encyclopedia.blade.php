@@ -190,6 +190,7 @@
                     @endif
                 </div>
 
+                @auth
                 <!-- Chat Input Real Form -->
                 <form action="{{ route('edukasi.chat.store') }}" method="POST" class="bg-white p-4 border-t border-slate-100 flex gap-3 items-center shadow-[0_-5px_15px_rgba(0,0,0,0.02)] relative z-10">
                     @csrf
@@ -198,6 +199,12 @@
                         <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
                     </button>
                 </form>
+                @else
+                <div class="bg-white p-6 border-t border-slate-100 flex flex-col items-center justify-center text-center shadow-[0_-5px_15px_rgba(0,0,0,0.02)] relative z-10">
+                    <p class="text-slate-500 mb-3 text-sm">Untuk bertanya kepada Profesor Grow, silakan masuk ke akun Anda terlebih dahulu.</p>
+                    <a href="{{ route('login') }}" class="px-6 py-2 bg-emerald-500 text-white text-sm font-bold rounded-full hover:bg-emerald-600 transition-colors shadow-sm">Masuk Akun</a>
+                </div>
+                @endauth
                 <div class="px-4 py-2 bg-slate-50 text-center border-t border-slate-100 rounded-b-[2rem]">
                     <p class="text-[10px] text-slate-400">
                         *<strong class="font-semibold text-slate-500">Disclaimer:</strong> Profesor Grow adalah sistem AI otomatis yang <b>hanya dapat menjawab</b> pertanyaan seputar cara tanam, produk Paper Grow, dan pengetahuan botani dasar.

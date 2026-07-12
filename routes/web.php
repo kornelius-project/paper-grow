@@ -15,7 +15,7 @@ Route::get('/panduan-ar', function () {
 })->name('ar.guide');
 
 Route::get('/edukasi/ensiklopedia', [PageController::class, 'encyclopedia'])->name('edukasi.encyclopedia');
-Route::post('/edukasi/ensiklopedia/chat', [PageController::class, 'storeChat'])->name('edukasi.chat.store');
+Route::post('/edukasi/ensiklopedia/chat', [PageController::class, 'storeChat'])->middleware('auth')->name('edukasi.chat.store');
 
 // ==========================================
 // RUTE AUTENTIKASI (LOGIN & REGISTER)
