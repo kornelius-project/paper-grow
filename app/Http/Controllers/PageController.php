@@ -65,7 +65,8 @@ class PageController extends Controller
                 'sunlight' => 'Penuh',
                 'fact' => 'Tomat kaya akan Vitamin C dan likopen. Buahnya secara botani adalah beri, yang berarti ia tergolong buah-buahan, bukan sayuran!',
                 'product_url' => route('products.index'),
-                'image_slot' => 'benih_tomat.jpeg'
+                'image_slot' => 'benih_tomat.jpeg',
+                'image_position' => 'object-center'
             ],
             [
                 'name' => 'Bayam Hijau',
@@ -75,7 +76,8 @@ class PageController extends Controller
                 'sunlight' => 'Penuh',
                 'fact' => 'Bayam sangat kaya akan zat besi dan vitamin K. Akar bayam juga membantu menggemburkan tanah.',
                 'product_url' => route('products.index'),
-                'image_slot' => 'benih_bayam.jpeg'
+                'image_slot' => 'benih_bayam.jpeg',
+                'image_position' => 'object-center'
             ],
             [
                 'name' => 'Sawi Caisim',
@@ -85,7 +87,8 @@ class PageController extends Controller
                 'sunlight' => 'Parsial - Penuh',
                 'fact' => 'Sawi sangat cepat panen (hanya ~30 hari) sehingga sangat cocok untuk edukasi kesabaran dan proses biologis anak.',
                 'product_url' => route('products.index'),
-                'image_slot' => 'benih_sawi.jpeg'
+                'image_slot' => 'benih_sawi.jpeg',
+                'image_position' => 'object-bottom' // Disesuaikan agak ke bawah
             ],
             [
                 'name' => 'Selada Keriting',
@@ -95,7 +98,8 @@ class PageController extends Controller
                 'sunlight' => 'Parsial',
                 'fact' => 'Selada keriting memiliki daun yang sangat sensitif terhadap panas. Tanaman ini bagus untuk percobaan hidroponik sederhana.',
                 'product_url' => route('products.index'),
-                'image_slot' => 'benih_selada.jpeg'
+                'image_slot' => 'benih_selada.jpeg',
+                'image_position' => 'object-center'
             ]
         ];
 

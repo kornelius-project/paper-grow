@@ -47,7 +47,7 @@
                                 <div class="w-full h-48 mb-6 rounded-2xl overflow-hidden relative z-10 shadow-sm border border-slate-100 group-hover:shadow-md transition-shadow bg-slate-50">
                                     <img src="{{ asset('images/' . $seed['image_slot']) }}" 
                                          alt="{{ $seed['name'] }}" 
-                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                         class="w-full h-full object-cover {{ $seed['image_position'] ?? 'object-center' }} group-hover:scale-105 transition-transform duration-700"
                                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                                     >
                                     <!-- Ikon Fallback (Muncul jika gambar belum diupload) -->
